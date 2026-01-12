@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-page-sort-header',
-  imports: [RouterLink, MatSortModule, MatTableModule],
+  imports: [RouterLink, MatSortModule, MatTableModule, MatIconModule],
   template: `
     <div class="page-container">
       <nav class="breadcrumb">

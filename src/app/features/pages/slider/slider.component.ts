@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-page-slider',
-  imports: [RouterLink, MatSliderModule, FormsModule],
+  imports: [RouterLink, MatSliderModule, FormsModule, MatIconModule],
   template: `
     <div class="page-container">
       <nav class="breadcrumb">

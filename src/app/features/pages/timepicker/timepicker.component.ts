@@ -4,10 +4,11 @@ import { MatTimepickerModule } from '@angular/material/timepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-page-timepicker',
-  imports: [RouterLink, MatTimepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule],
+  imports: [RouterLink, MatTimepickerModule, MatFormFieldModule, MatInputModule, MatNativeDateModule, MatIconModule],
   template: `
     <div class="page-container">
       <nav class="breadcrumb">
@@ -51,7 +52,12 @@ import { MatNativeDateModule } from '@angular/material/core';
         <h2>Inline Timepicker</h2>
         <p>Timepicker displayed inline.</p>
         <div class="demo-row">
-          <mat-timepicker-toggle></mat-timepicker-toggle>
+          <mat-form-field appearance="outline">
+            <mat-label>Select time</mat-label>
+            <input matInput [matTimepicker]="inlinePicker">
+            <mat-timepicker-toggle matIconSuffix [for]="inlinePicker"></mat-timepicker-toggle>
+            <mat-timepicker #inlinePicker></mat-timepicker>
+          </mat-form-field>
         </div>
       </section>
     </div>

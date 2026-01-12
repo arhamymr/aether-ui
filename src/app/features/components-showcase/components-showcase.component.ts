@@ -1,15 +1,11 @@
 import { Component, signal, computed, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatMenuModule } from '@angular/material/menu';
-import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '@shared/components/navbar';
 
 interface ComponentSection {
   name: string;
@@ -29,47 +25,15 @@ interface ComponentCategory {
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatDividerModule,
     MatExpansionModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    NavbarComponent
   ],
   template: `
     <div class="showcase-layout">
-      <mat-toolbar color="primary" class="header-toolbar">
-        <button mat-icon-button (click)="toggleSidebar()" aria-label="Toggle sidebar">
-          <mat-icon>menu</mat-icon>
-        </button>
-        <span class="header-title">Angular Dev Starter</span>
-        <span class="spacer"></span>
-        <a mat-button routerLink="/">
-          <mat-icon>home</mat-icon>
-          Home
-        </a>
-        <button mat-icon-button [matMenuTriggerFor]="userMenu" aria-label="User menu">
-          <mat-icon>account_circle</mat-icon>
-        </button>
-        <mat-menu #userMenu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>person</mat-icon>
-            <span>Profile</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-          </button>
-          <mat-divider />
-          <button mat-menu-item>
-            <mat-icon>logout</mat-icon>
-            <span>Logout</span>
-          </button>
-        </mat-menu>
-      </mat-toolbar>
+      <app-navbar />
       
       <div class="showcase-container">
         <aside class="sidebar" [class.collapsed]="sidebarCollapsed()">
@@ -118,24 +82,6 @@ interface ComponentCategory {
       display: flex;
       flex-direction: column;
       overflow: hidden;
-    }
-    
-    .header-toolbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-    }
-    
-    .header-title {
-      font-weight: 600;
-      font-size: 18px;
-      margin-left: 8px;
-    }
-    
-    .spacer {
-      flex: 1 1 auto;
     }
     
     .showcase-container {
@@ -261,6 +207,13 @@ export class ComponentsShowcaseComponent {
         { name: 'Select', route: 'select', icon: 'arrow_drop_down_circle' },
         { name: 'Radio', route: 'radio', icon: 'radio_button_checked' },
         { name: 'Switch', route: 'switch', icon: 'toggle_on' },
+        { name: 'Slider', route: 'slider', icon: 'linear_scale' },
+        { name: 'Slide Toggle', route: 'slidetoggle', icon: 'toggle_on' },
+        { name: 'Datepicker', route: 'datepicker', icon: 'date_range' },
+        { name: 'Timepicker', route: 'timepicker', icon: 'access_time' },
+        { name: 'Autocomplete', route: 'autocomplete', icon: 'autocomplete' },
+        { name: 'Form Field', route: 'formfield', icon: 'text_fields' },
+        { name: 'Button Toggle', route: 'buttontoggle', icon: 'toggle' },
       ]
     },
     {
@@ -269,25 +222,53 @@ export class ComponentsShowcaseComponent {
         { name: 'Card', route: 'card', icon: 'card_giftcard' },
         { name: 'Toolbar', route: 'toolbar', icon: 'view_week' },
         { name: 'Sidenav', route: 'sidenav', icon: 'view_sidebar' },
+        { name: 'Grid List', route: 'gridlist', icon: 'grid_on' },
+        { name: 'List', route: 'list', icon: 'list' },
+        { name: 'Expansion Panel', route: 'expansion', icon: 'expand_more' },
+        { name: 'Divider', route: 'divider', icon: 'horizontal_rule' },
       ]
     },
     {
       name: 'Navigation',
       components: [
         { name: 'Menu', route: 'menu', icon: 'menu' },
+        { name: 'Tree', route: 'tree', icon: 'account_tree' },
+        { name: 'Tabs', route: 'tabs', icon: 'tab' },
+        { name: 'Stepper', route: 'stepper', icon: 'steps' },
       ]
     },
     {
-      name: 'Popups',
+      name: 'Popups & Modals',
       components: [
         { name: 'Dialog', route: 'dialog', icon: 'picture_in_picture_alt' },
         { name: 'Snackbar', route: 'snackbar', icon: 'notifications' },
+        { name: 'Bottom Sheet', route: 'bottomsheet', icon: 'vertical_align_bottom' },
+        { name: 'Tooltip', route: 'tooltip', icon: 'info' },
       ]
     },
     {
       name: 'Data Table',
       components: [
         { name: 'Table', route: 'table', icon: 'table_chart' },
+        { name: 'Sort Header', route: 'sortheader', icon: 'sort' },
+        { name: 'Paginator', route: 'paginator', icon: 'paginator' },
+      ]
+    },
+    {
+      name: 'Indicators',
+      components: [
+        { name: 'Badge', route: 'badge', icon: 'notification_important' },
+        { name: 'Chips', route: 'chips', icon: 'label' },
+        { name: 'Progress Bar', route: 'progressbar', icon: 'progress_bar' },
+        { name: 'Progress Spinner', route: 'progressspinner', icon: 'spinner' },
+        { name: 'Icon', route: 'icon', icon: 'insert_emoticon' },
+      ]
+    },
+    {
+      name: 'Utilities',
+      components: [
+        { name: 'Core', route: 'core', icon: 'settings' },
+        { name: 'Ripples', route: 'ripples', icon: 'touch_app' },
       ]
     }
   ];

@@ -4,11 +4,12 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-page-stepper',
-  imports: [RouterLink, MatStepperModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule],
+  imports: [RouterLink, MatStepperModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule, MatIconModule],
   template: `
     <div class="page-container">
       <nav class="breadcrumb">

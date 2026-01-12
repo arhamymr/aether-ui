@@ -1,3 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* Base theme - DO NOT EDIT */
 @import "tailwindcss";
+@import "./styles/variables.css";
+
+/* Custom overrides - EDIT THIS FILE to customize the theme */
+@import "./styles/theme.css" layer(theme);

@@ -1,0 +1,77 @@
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
+@Component({
+  selector: 'app-resources-section',
+  imports: [RouterLink, MatIconModule],
+  template: `
+    <section class="resources-section">
+      <h2 class="section-title">Resources</h2>
+      <div class="resources-grid">
+        <a routerLink="/components" class="resource-link">
+          <mat-icon>dashboard</mat-icon>
+          <span>Component Library</span>
+        </a>
+        <a routerLink="/about" class="resource-link">
+          <mat-icon>info</mat-icon>
+          <span>About Page</span>
+        </a>
+        <a routerLink="/users" class="resource-link">
+          <mat-icon>people</mat-icon>
+          <span>Users Demo</span>
+        </a>
+        <a routerLink="/settings" class="resource-link">
+          <mat-icon>settings</mat-icon>
+          <span>Settings Page</span>
+        </a>
+      </div>
+    </section>
+  `,
+  styles: [`
+    .resources-section {
+      text-align: center;
+      padding: 64px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 600;
+      color: #1c1b1f;
+      margin: 0 0 40px;
+    }
+
+    .resources-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .resource-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #1c1b1f;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .resource-link:hover {
+      border-color: #1976d2;
+      color: #1976d2;
+    }
+
+    .resource-link mat-icon {
+      color: #1976d2;
+    }
+  `]
+})
+export class ResourcesSectionComponent {}

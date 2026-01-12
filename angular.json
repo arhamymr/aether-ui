@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "petaloker:build:production"
+              "buildTarget": "angular-dev-starter:build:production"
             },
             "development": {
-              "buildTarget": "petaloker:build:development"
+              "buildTarget": "angular-dev-starter:build:development"
             }
           },
           "defaultConfiguration": "development"

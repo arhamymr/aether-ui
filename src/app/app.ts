@@ -1,12 +1,16 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent } from './shared/components';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
+  imports: [RouterOutlet, NavbarComponent],
+  template: `
+    <app-navbar />
+    <main>
+      <router-outlet />
+    </main>
+  `,
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('petaloker');
-}
+export class App {}

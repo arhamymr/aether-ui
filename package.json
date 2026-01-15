@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "shadcn-style UI component library and CLI for Angular",
   "private": true,
-  "packageManager": "npm@10.9.2",
   "workspaces": [
-    "packages/ui",
-    "packages/cli",
-    "packages/boilerplate/*"
+    "apps/*",
+    "libs/*",
+    "packages/*"
   ],
   "scripts": {
-    "build:cli": "cd packages/cli && npm run build",
-    "build:ui": "cd packages/ui && npm run build",
-    "build": "npm run build:cli && npm run build:ui"
+    "build": "nx run-many --target=build --all",
+    "build:ui": "nx build ui",
+    "build:cli": "nx build cli",
+    "dev": "nx serve demo",
+    "test": "nx run-many --target=test --all",
+    "lint": "nx run-many --target=lint --all"
   },
   "keywords": [
     "angular",
@@ -22,5 +24,32 @@
     "shadcn",
     "cli"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^21.0.5",
+    "@angular/build": "^21.0.5",
+    "@angular/compiler-cli": "^21.1.0",
+    "@nx/angular": "^22.3.3",
+    "@nx/eslint": "^22.3.3",
+    "@nx/js": "^22.3.3",
+    "@nx/vitest": "^22.3.3",
+    "@tailwindcss/postcss": "^4.1.18",
+    "nx": "^22.3.3",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
+    "zone.js": "^0.16.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "dependencies": {
+    "@angular/common": "^21.1.0",
+    "@angular/compiler": "^21.1.0",
+    "@angular/core": "^21.1.0",
+    "@angular/forms": "^21.1.0",
+    "@angular/platform-browser": "^21.1.0",
+    "@angular/platform-browser-dynamic": "^21.1.0",
+    "@angular/router": "^21.1.0"
+  }
 }

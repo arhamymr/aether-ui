@@ -1,4 +1,14 @@
 packages:
-  - packages/ui
-  - packages/cli
-  - packages/boilerplate/*
+  - apps/*
+  - libs/*
+  - packages/*
+
+catalog:
+  angular: ^21.0.0
+  typescript: ~5.9.0
+  tailwindcss: ^4.1.0
+
+catalog:
+  devTools:
+    nx: ^22.3.3
+    typescript: ~5.9.0

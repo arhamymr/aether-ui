@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM"],
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationMap": true,
+    "useDefineForClassFields": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "@apsara/ui": ["libs/ui/src/index.ts"],
+      "@apsara/cli": ["libs/cli/src/index.ts"],
+      "@apsara/tools": ["libs/tools/src/index.ts"]
+    },
+    "baseUrl": "."
+  },
+  "exclude": ["node_modules", "dist"]
+}

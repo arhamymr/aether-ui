@@ -7,8 +7,7 @@
 /bazel-out
 
 # apsara-ui CLI build output
-packages/cli/dist/
-packages/ui/dist/
+libs/*/dist/
 
 # Node
 /node_modules
@@ -34,6 +33,7 @@ yarn-error.log
 
 # Miscellaneous
 /.angular/cache
+.nx/
 .sass-cache/
 /connect.lock
 /coverage

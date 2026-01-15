@@ -4,7 +4,7 @@ A shadcn-style UI component library and CLI for Angular. Copy components directl
 
 ## Overview
 
-This is a monorepo containing reusable Angular UI components, a CLI tool for installing components, and project templates.
+This is an Nx monorepo containing reusable Angular UI components, a CLI tool for installing components, and project templates.
 
 ## Table of Contents
 
@@ -116,8 +116,32 @@ Usage: npx apsara-ui add button card input
 
 ```
 apsara-angular-devkit/
-├── packages/
-│   ├── ui/                           # UI component library
+├── apps/
+│   ├── boilerplate/                      # Project templates
+│   │   └── minimal/
+│   │       ├── angular.json
+│   │       ├── tsconfig.json
+│   │       ├── src/
+│   │       │   ├── app/
+│   │       │   │   ├── ui/               # Pre-installed components
+│   │       │   │   ├── components/
+│   │       │   │   ├── app.component.ts
+│   │       │   │   ├── app.config.ts
+│   │       │   │   └── app.routes.ts
+│   │       │   ├── main.ts
+│   │       │   ├── index.html
+│   │       │   └── styles.css
+│   │       ├── package.json
+│   │       └── README.md
+│   │
+│   └── demo/                             # Demo/documentation app
+│       ├── src/
+│       ├── app/
+│       ├── styles.css
+│       └── angular.json
+│
+├── libs/
+│   ├── ui/                               # UI component library
 │   │   ├── src/
 │   │   │   ├── components/
 │   │   │   │   ├── button/
@@ -129,45 +153,32 @@ apsara-angular-devkit/
 │   │   │   │   └── card/
 │   │   │   │       ├── card.component.ts
 │   │   │   │       └── index.ts
-│   │   │   ├── index.ts              # Barrel export
+│   │   │   ├── index.ts                  # Barrel export
 │   │   │   └── public-api.ts
 │   │   ├── package.json
 │   │   ├── tsconfig.json
-│   │   └── tsup.config.ts            # Bundling config
+│   │   └── tsup.config.ts                # Bundling config
 │   │
-│   ├── cli/                          # CLI tool
+│   ├── cli/                              # CLI tool
 │   │   ├── src/
-│   │   │   ├── main.ts               # Entry point
+│   │   │   ├── main.ts                   # Entry point
 │   │   │   ├── commands/
-│   │   │   │   ├── init.ts           # init command
-│   │   │   │   ├── add.ts            # add command
-│   │   │   │   └── list.ts           # list command
-│   │   │   ├── utils/
-│   │   │   │   ├── components.ts     # Component discovery
-│   │   │   │   └── logger.ts         # Colored console output
-│   │   │   └── templates/            # (future) component templates
+│   │   │   │   ├── init.ts               # init command
+│   │   │   │   ├── add.ts                # add command
+│   │   │   │   └── list.ts               # list command
+│   │   │   └── utils/
+│   │   │       ├── components.ts         # Component discovery
+│   │   │       └── logger.ts             # Colored console output
 │   │   ├── package.json
 │   │   └── tsconfig.json
 │   │
-│   └── boilerplate/                  # Project templates
-│       └── minimal/
-│           ├── angular.json
-│           ├── tsconfig.json
-│           ├── tailwind.config.js
-│           ├── src/
-│           │   ├── app/
-│           │   │   ├── ui/            # Pre-installed components
-│           │   │   ├── pages/
-│           │   │   ├── app.component.ts
-│           │   │   ├── app.config.ts
-│           │   │   └── app.routes.ts
-│           │   ├── main.ts
-│           │   ├── index.html
-│           │   └── styles.css
-│           ├── package.json
-│           └── README.md
+│   └── tools/                            # Build tools and utilities
 │
-├── src/                              # Demo/documentation app
+├── packages/                             # Legacy package directory
+│   └── boilerplate/                      # Project templates (deprecated)
+│
+├── nx.json                               # Nx workspace config
+├── angular.json                          # Angular CLI config
 ├── pnpm-workspace.yaml
 ├── package.json
 └── README.md
@@ -245,7 +256,7 @@ All components use Angular signals for reactive inputs:
 
 ### CLI Architecture
 
-The CLI is built with Commander.js and Inquirer.js:
+The CLI is built with Commander.js:
 
 ```typescript
 // main.ts
@@ -277,7 +288,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const componentsPath = path.resolve(__dirname, '../../../ui/src/components');
 ```
 
-This resolves `packages/cli/src/commands/` to `packages/ui/src/components`.
+This resolves `libs/cli/src/commands/` to `libs/ui/src/components`.
 
 ### Boilerplate Template
 
@@ -297,7 +308,7 @@ The minimal boilerplate includes:
 
 ```bash
 # Navigate to CLI package
-cd packages/cli
+cd libs/cli
 
 # Install dependencies
 npm install
@@ -312,7 +323,7 @@ npm run build
 
 ```bash
 # Navigate to UI package
-cd packages/ui
+cd libs/ui
 
 # Install dependencies
 npm install
@@ -328,14 +339,14 @@ npm run build
 **For UI library:**
 
 ```bash
-cd packages/ui
+cd libs/ui
 npm publish
 ```
 
 **For CLI:**
 
 ```bash
-cd packages/cli
+cd libs/cli
 npm publish
 ```
 
@@ -349,8 +360,24 @@ npm install
 npm run build
 
 # Test CLI locally
-node packages/cli/dist/main.js list
-node packages/cli/dist/main.js init
+node libs/cli/dist/main.js list
+node libs/cli/dist/main.js init
+```
+
+### Nx Commands
+
+```bash
+# Run demo app
+npx nx serve demo
+
+# Run boilerplate
+npx nx serve boilerplate
+
+# Build all libraries
+npx nx run-many --target=build --projects=ui,cli
+
+# Run tests
+npx nx test
 ```
 
 ---
@@ -407,10 +434,10 @@ When adding components:
 
 ### 1. Create Component Files
 
-Create in `packages/ui/src/components/<component-name>/`:
+Create in `libs/ui/src/components/<component-name>/`:
 
 ```typescript
-// packages/ui/src/components/new-component/new-component.component.ts
+// libs/ui/src/components/new-component/new-component.component.ts
 import { Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -430,14 +457,14 @@ export class NewComponentComponent {
 ### 2. Create Index Export
 
 ```typescript
-// packages/ui/src/components/new-component/index.ts
+// libs/ui/src/components/new-component/index.ts
 export { NewComponentComponent } from './new-component.component';
 ```
 
 ### 3. Update UI Package Index
 
 ```typescript
-// packages/ui/src/index.ts
+// libs/ui/src/index.ts
 export * from './button';
 export * from './input';
 export * from './card';
@@ -446,7 +473,7 @@ export * from './new-component';  // Add this
 
 ### 4. Add CLI Component Description
 
-Update `packages/cli/src/commands/list.ts`:
+Update `libs/cli/src/commands/list.ts`:
 
 ```typescript
 const componentDescriptions: Record<string, string> = {
@@ -460,7 +487,7 @@ const componentDescriptions: Record<string, string> = {
 ### 5. Rebuild CLI
 
 ```bash
-cd packages/cli && npm run build
+cd libs/cli && npm run build
 ```
 
 ---

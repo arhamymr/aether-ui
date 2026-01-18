@@ -1,11 +1,10 @@
-import { Component, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy, contentChildren, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-tabs',
   standalone: true,
-  imports: [CommonModule, MatTabsModule],
+  imports: [CommonModule],
   template: `
     <div class="flex flex-col">
       <ng-content select="app-tabs-list"></ng-content>

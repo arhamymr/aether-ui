@@ -41,5 +41,8 @@
     "tailwind",
     "shadcn"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@angular/animations": "^21.1.0"
+  }
 }

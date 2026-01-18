@@ -1,22 +1,20 @@
-import { Component, input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, input, ChangeDetectionStrategy, output, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTabsModule } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-tabs-list',
   standalone: true,
-  imports: [CommonModule, MatTabsModule],
+  imports: [CommonModule],
   template: `
-    <nav mat-tab-nav-bar
-      class="flex border-b border-border"
-      [tabPanel]="tabPanel"
-      [animationDuration]="animationDuration()">
+    <nav
+      class="flex border-b border-gray-200"
+      role="tablist"
+      [attr.aria-label]="ariaLabel()">
       <ng-content></ng-content>
     </nav>
-    <mat-tab-nav-panel #tabPanel id="tabs-panel" class="block"></mat-tab-nav-panel>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TabsListComponent {
-  readonly animationDuration = input<'300ms' | '150ms'>('300ms');
+  readonly ariaLabel = input<string>('Tabs navigation');
 }

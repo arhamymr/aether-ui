@@ -6,7 +6,13 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="py-6" [class.hidden]="!isActive()">
+    <div
+      role="tabpanel"
+      [attr.aria-labelledby]="'tab-' + value()"
+      [attr.aria-hidden]="!active()"
+      [hidden]="!active()"
+      class="py-6"
+      [attr.data-state]="active() ? 'active' : 'hidden'">
       <ng-content></ng-content>
     </div>
   `,
@@ -14,8 +20,5 @@ import { CommonModule } from '@angular/common';
 })
 export class TabsPanelComponent {
   readonly value = input.required<string>();
-
-  isActive(): boolean {
-    return false;
-  }
+  readonly active = input<boolean>(false);
 }

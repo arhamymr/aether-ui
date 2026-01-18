@@ -1,6 +1,5 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/cn';
 
@@ -10,35 +9,35 @@ const buttonVariants = cva(
   [
     'relative font-medium select-none inline-flex justify-center items-center gap-2.5 transition-colors cursor-pointer',
     'after:absolute after:inset-0 after:bg-white/15 after:opacity-0 hover:after:opacity-100 active:after:opacity-100 data-popup-open:after:opacity-100 after:transition-opacity',
-    'focus:outline-0 focus-visible:outline-2 focus-visible:outline-offset-2',
+    'focus:outline-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
     'disabled:opacity-70 disabled:pointer-events-none data-disabled:opacity-70 data-disabled:pointer-events-none',
-    'ring ring-[var(--border)] inset-shadow-2xs inset-shadow-white/15 shadow',
+    'ring ring-gray-200 inset-shadow-2xs inset-shadow-white/15 shadow',
   ],
   {
     variants: {
       variant: {
         primary: [
-          'bg-[var(--primary)] text-[var(--primary-foreground)] **:[svg]:[color:var(--primary-foreground)]',
-          'ring-[var(--primary-border)] outline-[var(--primary)]',
+          'bg-blue-500 text-white **:[svg]:[color:white]',
+          'ring-blue-500 outline-blue-500',
         ],
         secondary: [
-          'bg-[var(--secondary)] text-[var(--secondary-foreground)] **:[svg]:[color:var(--secondary-foreground)]',
-          'ring-[var(--secondary-border)] outline-[var(--secondary)]',
+          'bg-gray-100 text-gray-900 **:[svg]:[color:gray-900]',
+          'ring-gray-200 outline-gray-500',
         ],
         tertiary: [
-          'bg-[var(--tertiary)] text-[var(--tertiary-foreground)] **:[svg]:[color:var(--tertiary-foreground)]',
-          'ring-[var(--tertiary-border)] outline-[var(--tertiary)] inset-shadow-white/15',
+          'bg-gray-800 text-white **:[svg]:[color:white]',
+          'ring-gray-700 outline-gray-800 inset-shadow-white/15',
         ],
         danger: [
-          'bg-[var(--danger)] text-[var(--danger-foreground)] **:[svg]:[color:var(--danger-foreground)]',
-          'ring-[var(--danger-border)] outline-[var(--danger)]',
+          'bg-red-500 text-white **:[svg]:[color:white]',
+          'ring-red-500 outline-red-500',
         ],
         outline: [
-          'bg-transparent text-[var(--foreground)] **:[svg]:[color:var(--foreground)]',
-          'ring-[var(--border)]',
+          'bg-transparent text-gray-900 **:[svg]:[color:gray-900]',
+          'ring-gray-200',
         ],
         plain: [
-          'bg-transparent text-[var(--foreground)] **:[svg]:[color:var(--foreground)]',
+          'bg-transparent text-gray-900 **:[svg]:[color:gray-900]',
           'ring-0 shadow-none',
         ],
       },
@@ -79,7 +78,7 @@ const buttonVariants = cva(
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, MatProgressSpinnerModule],
+  imports: [CommonModule],
   template: `
     <button
       [disabled]="disabled() || loading()"
@@ -95,10 +94,10 @@ const buttonVariants = cva(
       (click)="onClick($event)">
 
       @if (loading()) {
-        <mat-spinner
-          [diameter]="spinnerSize"
-          class="button-spinner"
-          [class.inherit-color]="!loading()"></mat-spinner>
+        <svg class="animate-spin button-spinner" viewBox="0 0 24 24" fill="none" [attr.stroke-width]="spinnerStrokeWidth">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round" />
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+        </svg>
       }
 
       @if (label()) {
@@ -118,10 +117,13 @@ const buttonVariants = cva(
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+      width: 18px;
+      height: 18px;
     }
 
-    .button-spinner.inherit-color ::ng-deep svg {
-      fill: currentColor;
+    .button-spinner.manual-size {
+      width: var(--spinner-size, 18px);
+      height: var(--spinner-size, 18px);
     }
 
     .label.invisible {
@@ -155,6 +157,10 @@ export class ButtonComponent {
       'lg-icon': 18
     };
     return sizeMap[this.size() || 'md'] || 18;
+  }
+
+  get spinnerStrokeWidth(): number {
+    return 3;
   }
 
   onClick(event: Event): void {

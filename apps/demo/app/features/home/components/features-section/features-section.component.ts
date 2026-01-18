@@ -91,11 +91,11 @@ interface Feature {
 })
 export class FeaturesSectionComponent {
   features = signal<Feature[]>([
-    { icon: 'speed', title: 'High Performance', description: 'Optimized Angular build with lazy loading and efficient change detection' },
-    { icon: 'verified', title: 'Type Safe', description: 'Strict TypeScript configuration with full type inference' },
-    { icon: 'palette', title: 'Custom Design', description: 'Beautiful Tailwind-based design system' },
-    { icon: 'widgets', title: 'Standalone Components', description: 'Modern Angular architecture without NgModules' },
-    { icon: 'architecture', title: 'Clean Architecture', description: 'Well-organized folder structure following best practices' },
-    { icon: 'sync', title: 'Signals Ready', description: 'Reactive state management using Angular Signals' }
+    { icon: 'widgets', title: '40+ Components', description: 'Comprehensive library of Angular components for every use case' },
+    { icon: 'accessible', title: 'Accessible', description: 'WCAG AA compliant with proper ARIA attributes and keyboard navigation' },
+    { icon: 'speed', title: 'High Performance', description: 'Optimized change detection and lazy-loaded for fast load times' },
+    { icon: 'tune', title: 'Customizable', description: 'Theming support with CSS variables and flexible component APIs' },
+    { icon: 'code', title: 'Type Safe', description: 'Full TypeScript support with strict typing and type inference' },
+    { icon: 'architecture', title: 'Standalone', description: 'Modern Angular architecture using standalone components' }
   ]);
 }

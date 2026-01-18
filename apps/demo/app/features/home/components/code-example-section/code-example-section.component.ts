@@ -8,20 +8,18 @@ import { CodeSnippetComponent } from '../../../../shared/components/code-snippet
   imports: [ButtonComponent, CardComponent, CodeSnippetComponent],
   template: `
     <section class="code-section">
-      <h2 class="section-title">Quick Start Example</h2>
-      <p class="section-subtitle">Using the custom Button component</p>
+      <h2 class="section-title">Easy to Use</h2>
+      <p class="section-subtitle">Simple API with Angular signals and standalone components</p>
 
       <div class="code-example">
         <app-card class="code-preview">
           <div class="preview-row">
             <app-button label="Primary" variant="primary" />
             <app-button label="Secondary" variant="secondary" />
-            <app-button label="Tertiary" variant="tertiary" />
           </div>
           <div class="preview-row">
-            <app-button label="Danger" variant="danger" />
             <app-button label="Outline" variant="outline" />
-            <app-button label="Plain" variant="plain" />
+            <app-button label="Danger" variant="danger" />
           </div>
         </app-card>
 

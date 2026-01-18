@@ -10,19 +10,19 @@ import { ButtonComponent, CardComponent } from '@apsara/ui';
     <section class="cta-section">
       <app-card class="cta-card">
         <div class="cta-content">
-          <h2 class="cta-title">Ready to Build?</h2>
+          <h2 class="cta-title">Start Building Today</h2>
           <p class="cta-text">
-            Start your next Angular project with this boilerplate.
-            It includes everything you need to build modern, scalable applications.
+            Explore our comprehensive component library and build beautiful,
+            accessible Angular applications faster.
           </p>
           <div class="cta-buttons">
             <app-button
-              label="Get Started"
-              (clicked)="navigateTo('/auth/register')" />
+              label="View Components"
+              (clicked)="navigateTo('/components')" />
             <app-button
               variant="outline"
-              label="Learn More"
-              (clicked)="navigateTo('/about')" />
+              label="Read Documentation"
+              (clicked)="navigateTo('/docs')" />
           </div>
         </div>
       </app-card>

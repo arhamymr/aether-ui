@@ -1,25 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { ButtonComponent, CardComponent } from '@apsara/ui';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-resources-section',
   standalone: true,
-  imports: [ButtonComponent, CardComponent],
+  imports: [ButtonComponent, CardComponent, MatIconModule],
   template: `
     <section class="resources-section">
-      <h2 class="section-title">Resources</h2>
+      <h2 class="section-title">Explore</h2>
       <div class="resources-grid">
-        <app-card class="resource-link" (clicked)="navigateTo('/about')">
-          <span>About Page</span>
-        </app-card>
-        <app-card class="resource-link" (clicked)="navigateTo('/settings')">
-          <span>Settings Page</span>
+        <app-card class="resource-link" (clicked)="navigateTo('/components')">
+          <mat-icon>widgets</mat-icon>
+          <span>Components</span>
         </app-card>
         <app-card class="resource-link" (clicked)="navigateTo('/docs')">
+          <mat-icon>description</mat-icon>
           <span>Documentation</span>
-        </app-card>
-        <app-card class="resource-link" (clicked)="navigateTo('/auth/login')">
-          <span>Login</span>
         </app-card>
       </div>
     </section>
@@ -61,13 +59,21 @@ import { ButtonComponent, CardComponent } from '@apsara/ui';
       color: var(--primary);
     }
 
+    .resource-link mat-icon {
+      font-size: 20px;
+      width: 20px;
+      height: 20px;
+    }
+
     .resource-link span {
       font-weight: 500;
     }
   `]
 })
 export class ResourcesSectionComponent {
+  private router = inject(Router);
+
   navigateTo(path: string): void {
-    window.location.href = path;
+    this.router.navigate([path]);
   }
 }

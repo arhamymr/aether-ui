@@ -1,31 +1,32 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ButtonComponent, CardComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-resources-section',
   standalone: true,
-  imports: [RouterLink],
+  imports: [ButtonComponent, CardComponent],
   template: `
     <section class="resources-section">
       <h2 class="section-title">Resources</h2>
       <div class="resources-grid">
-        <a routerLink="/about" class="resource-link">
+        <app-card class="resource-link" (clicked)="navigateTo('/about')">
           <span>About Page</span>
-        </a>
-        <a routerLink="/settings" class="resource-link">
+        </app-card>
+        <app-card class="resource-link" (clicked)="navigateTo('/settings')">
           <span>Settings Page</span>
-        </a>
-        <a routerLink="/docs" class="resource-link">
+        </app-card>
+        <app-card class="resource-link" (clicked)="navigateTo('/docs')">
           <span>Documentation</span>
-        </a>
-        <a routerLink="/auth/login" class="resource-link">
+        </app-card>
+        <app-card class="resource-link" (clicked)="navigateTo('/auth/login')">
           <span>Login</span>
-        </a>
+        </app-card>
       </div>
     </section>
   `,
   styles: [`
-    .resources-section {
+    :host {
+      display: block;
       text-align: center;
       padding: 64px 24px;
       max-width: 1200px;
@@ -35,7 +36,7 @@ import { RouterLink } from '@angular/router';
     .section-title {
       font-size: 28px;
       font-weight: 600;
-      color: #1c1b1f;
+      color: var(--foreground);
       margin: 0 0 40px;
     }
 
@@ -51,19 +52,22 @@ import { RouterLink } from '@angular/router';
       align-items: center;
       gap: 12px;
       padding: 16px 24px;
-      background: white;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #1c1b1f;
-      font-weight: 500;
-      transition: all 0.2s ease;
+      cursor: pointer;
+      transition: border-color 0.2s ease, color 0.2s ease;
     }
 
     .resource-link:hover {
-      border-color: #1976d2;
-      color: #1976d2;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .resource-link span {
+      font-weight: 500;
     }
   `]
 })
-export class ResourcesSectionComponent {}
+export class ResourcesSectionComponent {
+  navigateTo(path: string): void {
+    window.location.href = path;
+  }
+}

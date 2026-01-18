@@ -35,4 +35,5 @@ export * from './components/bottom-sheet';
 export * from './components/table';
 export * from './components/sort-header';
 export * from './components/tree';
+export * from './components/alert';
 export { cn } from './lib/cn';

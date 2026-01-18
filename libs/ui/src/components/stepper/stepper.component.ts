@@ -16,7 +16,7 @@ import { cn } from '../../lib/cn';
               <div
                 class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
                        transition-colors"
-                [class.bg-blue-600]="getCurrentStep() >= $index"
+                [class.bg-primary]="getCurrentStep() >= $index"
                 [class.text-white]="getCurrentStep() >= $index"
                 [class.bg-gray-200]="getCurrentStep() < $index"
                 [class.text-gray-600]="getCurrentStep() < $index">
@@ -31,7 +31,7 @@ import { cn } from '../../lib/cn';
             @if ($index < steps().length - 1) {
               <div
                 class="w-12 h-0.5 mx-2"
-                [class.bg-blue-600]="getCurrentStep() > $index"
+                [class.bg-primary]="getCurrentStep() > $index"
                 [class.bg-gray-200]="getCurrentStep() <= $index"></div>
             }
           </div>
@@ -49,8 +49,8 @@ import { cn } from '../../lib/cn';
           Previous
         </button>
         <button
-          class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg
-                 hover:bg-blue-700"
+          class="px-4 py-2 text-sm font-medium text-white bg-primary rounded-lg
+                 hover:bg-primary/90"
           (click)="onNext()">
           {{ getCurrentStep() === steps().length - 1 ? 'Finish' : 'Next' }}
         </button>

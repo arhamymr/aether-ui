@@ -12,7 +12,7 @@ import { cn } from '../../lib/cn';
       [class.h-1]="size() === 'sm'"
       [class.h-3]="size() === 'lg'">
       <div
-        class="absolute h-full bg-blue-600 rounded-full transition-all"
+        class="absolute h-full bg-primary rounded-full transition-all"
         [style.width.%]="percent()"></div>
       <input
         type="range"
@@ -24,7 +24,7 @@ import { cn } from '../../lib/cn';
         class="absolute w-full h-full opacity-0 cursor-pointer"
         [disabled]="disabled()" />
       <div
-        class="absolute w-4 h-4 bg-white border-2 border-blue-600 rounded-full shadow
+        class="absolute w-4 h-4 bg-white border-2 border-[var(--primary)] rounded-full shadow
                transform -translate-x-1/2 transition-all cursor-pointer
                hover:scale-110"
         [style.left.%]="percent()"

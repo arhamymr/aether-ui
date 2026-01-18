@@ -45,7 +45,7 @@ export class ToolbarComponent {
 
   colorClass(): string {
     const colors: Record<string, string> = {
-      primary: 'bg-blue-600 text-white',
+      primary: 'bg-primary text-white',
       surface: 'bg-white text-gray-900',
       transparent: 'bg-transparent text-gray-900',
     };

@@ -19,7 +19,7 @@ import { cn } from '../../lib/cn';
         class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors
                focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2
                disabled:opacity-50 disabled:cursor-not-allowed"
-        [class.bg-blue-600]="isChecked()"
+        [class.bg-primary]="isChecked()"
         [class.bg-gray-200]="!isChecked()">
         <span
           class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform shadow-sm

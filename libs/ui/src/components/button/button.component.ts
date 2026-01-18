@@ -18,20 +18,20 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
-          'bg-[var(--primary)] text-[var(--primary-foreground)] **:[svg]:[color:var(--primary-foreground)]',
-          'ring-[var(--primary-border)] outline-[var(--primary)]',
+          'bg-primary text-primary-foreground **:[svg]:[color:var(--primary-foreground)]',
+          'ring-primary-border outline-primary',
         ],
         secondary: [
-          'bg-[var(--secondary)] text-[var(--secondary-foreground)] **:[svg]:[color:var(--secondary-foreground)]',
-          'ring-[var(--secondary-border)] outline-[var(--secondary)]',
+          'bg-secondary text-secondary-foreground **:[svg]:[color:var(--secondary-foreground)]',
+          'ring-secondary-border outline-secondary',
         ],
         tertiary: [
-          'bg-[var(--tertiary)] text-[var(--tertiary-foreground)] **:[svg]:[color:var(--tertiary-foreground)]',
-          'ring-[var(--tertiary-border)] outline-[var(--tertiary)] inset-shadow-white/15',
+          'bg-tertiary text-tertiary-foreground **:[svg]:[color:var(--tertiary-foreground)]',
+          'ring-tertiary-border outline-tertiary] inset-shadow-white/15',
         ],
         danger: [
-          'bg-[var(--danger)] text-[var(--danger-foreground)] **:[svg]:[color:var(--danger-foreground)]',
-          'ring-[var(--danger-border)] outline-[var(--danger)]',
+          'bg-danger text-danger-foreground **:[svg]:[color:var(--danger-foreground)]',
+          'ring-danger-border outline-danger',
         ],
         outline: [
           'bg-transparent text-[var(--foreground)] **:[svg]:[color:var(--foreground)]',
@@ -83,6 +83,8 @@ const buttonVariants = cva(
   template: `
     <button
       [disabled]="disabled() || loading()"
+      [class.pointer-events-none]="disabled() || loading()"
+      [class.cursor-not-allowed]="disabled() || loading()"
       [class]="cn(
         buttonVariants({
           variant: variant(),

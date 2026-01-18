@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import { CardComponent } from '@apsara/ui';
 
 interface Feature {
   icon: string;
@@ -9,18 +10,19 @@ interface Feature {
 @Component({
   selector: 'app-features-section',
   standalone: true,
+  imports: [CardComponent],
   template: `
-    <section class="features-section px-6 py-16 max-w-7xl mx-auto">
-      <h2 class="section-title text-3xl font-semibold text-gray-900 dark:text-white mb-2 text-center">Key Features</h2>
-      <div class="features-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section class="features-section">
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
         @for (feature of features(); track feature.title) {
-          <div class="feature-card bg-white dark:bg-gray-800 rounded-2xl p-8 text-center border border-gray-200 dark:border-gray-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-xl">
-            <div class="feature-icon w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-5">
-              <i class="material-icons text-2xl text-white">{{ feature.icon }}</i>
+          <app-card class="feature-card">
+            <div class="feature-icon-wrapper">
+              <i class="material-icons feature-icon">{{ feature.icon }}</i>
             </div>
-            <h3 class="feature-title text-xl font-semibold text-gray-900 dark:text-white mb-3">{{ feature.title }}</h3>
-            <p class="feature-description text-sm text-gray-600 dark:text-gray-400 m-0 leading-relaxed">{{ feature.description }}</p>
-          </div>
+            <h3 class="feature-title">{{ feature.title }}</h3>
+            <p class="feature-description">{{ feature.description }}</p>
+          </app-card>
         }
       </div>
     </section>
@@ -28,6 +30,62 @@ interface Feature {
   styles: [`
     :host {
       display: block;
+      padding: 64px 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--foreground);
+      margin: 0 0 48px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .feature-card {
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .feature-icon-wrapper {
+      width: 64px;
+      height: 64px;
+      background: var(--accent);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      color: var(--accent-foreground);
+    }
+
+    .feature-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--foreground);
+      margin: 0 0 12px;
+    }
+
+    .feature-description {
+      font-size: 14px;
+      color: var(--dimmed);
+      line-height: 1.6;
+      margin: 0;
     }
   `]
 })

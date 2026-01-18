@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '@apsara/ui';
+import { ButtonComponent, CardComponent } from '@apsara/ui';
+import { CodeSnippetComponent } from '../../../../shared/components/code-snippet/code-snippet.component';
 
 @Component({
   selector: 'app-code-example-section',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, CardComponent, CodeSnippetComponent],
   template: `
     <section class="code-section">
       <h2 class="section-title">Quick Start Example</h2>
       <p class="section-subtitle">Using the custom Button component</p>
 
       <div class="code-example">
-        <div class="code-preview">
+        <app-card class="code-preview">
           <div class="preview-row">
             <app-button label="Primary" variant="primary" />
             <app-button label="Secondary" variant="secondary" />
@@ -22,21 +23,20 @@ import { ButtonComponent } from '@apsara/ui';
             <app-button label="Outline" variant="outline" />
             <app-button label="Plain" variant="plain" />
           </div>
-        </div>
+        </app-card>
 
-        <div class="code-snippet">
-          <pre><code>&lt;app-button label="Primary" variant="primary"&gt;
-&lt;/app-button&gt;
-
-&lt;app-button label="Outline" variant="outline"&gt;
-&lt;/app-button&gt;</code></pre>
+        <div class="code-snippet-wrapper">
+          <app-code-snippet
+            [code]="codeExample"
+            language="html" />
         </div>
       </div>
     </section>
   `,
   styles: [`
-    .code-section {
-      background: #f5f7fa;
+    :host {
+      display: block;
+      background: var(--secondary);
       border-radius: 24px;
       padding: 64px 24px;
       max-width: 1000px;
@@ -46,14 +46,14 @@ import { ButtonComponent } from '@apsara/ui';
     .section-title {
       font-size: 28px;
       font-weight: 600;
-      color: #1c1b1f;
+      color: var(--foreground);
       margin: 0 0 8px;
       text-align: center;
     }
 
     .section-subtitle {
       font-size: 16px;
-      color: #616161;
+      color: var(--dimmed);
       margin: 0 0 40px;
       text-align: center;
     }
@@ -66,10 +66,7 @@ import { ButtonComponent } from '@apsara/ui';
     }
 
     .code-preview {
-      background: white;
-      border-radius: 12px;
       padding: 32px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .preview-row {
@@ -83,22 +80,9 @@ import { ButtonComponent } from '@apsara/ui';
       margin-bottom: 0;
     }
 
-    .code-snippet {
-      background: #1e1e1e;
-      border-radius: 12px;
-      padding: 24px;
-      overflow-x: auto;
-    }
-
-    .code-snippet pre {
-      margin: 0;
-    }
-
-    .code-snippet code {
-      color: #d4d4d4;
-      font-family: 'Fira Code', 'Consolas', monospace;
-      font-size: 14px;
-      line-height: 1.6;
+    .code-snippet-wrapper {
+      border-radius: var(--radius);
+      overflow: hidden;
     }
 
     @media (max-width: 768px) {
@@ -110,10 +94,16 @@ import { ButtonComponent } from '@apsara/ui';
         order: 2;
       }
 
-      .code-snippet {
+      .code-snippet-wrapper {
         order: 1;
       }
     }
   `]
 })
-export class CodeExampleSectionComponent {}
+export class CodeExampleSectionComponent {
+  codeExample = `<app-button label="Primary" variant="primary">
+</app-button>
+
+<app-button label="Outline" variant="outline">
+</app-button>`;
+}

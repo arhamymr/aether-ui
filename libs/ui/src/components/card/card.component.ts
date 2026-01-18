@@ -9,11 +9,7 @@ import { cn } from '../../lib/cn';
   template: `
     <div
       [class]="cn(
-        'bg-card text-card-foreground rounded-lg transition-shadow',
-        'hover:shadow-lg',
-        variant() === 'elevated' && 'shadow-md',
-        variant() === 'outlined' && 'border border-card-border shadow-none',
-        variant() === 'tonal' && 'bg-muted shadow-none',
+        'bg-[var(--card)] text-[var(--foreground)] border border-[var(--card-border)] rounded-[var(--radius)] transition-shadow',
         padding() === 'none' && 'p-0',
         padding() === 'small' && 'p-3',
         padding() === 'medium' && 'p-5',
@@ -32,7 +28,6 @@ import { cn } from '../../lib/cn';
   `]
 })
 export class CardComponent {
-  readonly variant = input<'elevated' | 'outlined' | 'tonal'>('elevated');
   readonly padding = input<'none' | 'small' | 'medium' | 'large'>('medium');
   readonly align = input<'start' | 'center' | 'end'>('start');
   cn = cn;

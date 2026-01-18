@@ -1,14 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '@apsara/ui';
+import { ButtonComponent, CardComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-cta-section',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, CardComponent],
   template: `
     <section class="cta-section">
-      <div class="cta-card">
+      <app-card class="cta-card">
         <div class="cta-content">
           <h2 class="cta-title">Ready to Build?</h2>
           <p class="cta-text">
@@ -25,7 +25,7 @@ import { ButtonComponent } from '@apsara/ui';
               (clicked)="navigateTo('/about')" />
           </div>
         </div>
-      </div>
+      </app-card>
     </section>
   `,
   styles: [`
@@ -36,10 +36,7 @@ import { ButtonComponent } from '@apsara/ui';
     }
 
     .cta-card {
-      background: white;
-      border-radius: 16px;
       padding: 40px;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
     }
 
     .cta-content {
@@ -49,13 +46,13 @@ import { ButtonComponent } from '@apsara/ui';
     .cta-title {
       font-size: 28px;
       font-weight: 600;
-      color: #1c1b1f;
+      color: var(--foreground);
       margin: 0 0 16px;
     }
 
     .cta-text {
       font-size: 16px;
-      color: #616161;
+      color: var(--dimmed);
       margin: 0 0 32px;
       line-height: 1.6;
     }

@@ -38,10 +38,10 @@ import { ButtonComponent } from '@apsara/ui';
   `,
   styles: [`
     .hero-section {
-      background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover, color-mix(in oklch, var(--primary), black 10%)) 100%);
       padding: 80px 24px;
       text-align: center;
-      color: white;
+      color: var(--primary-foreground);
     }
 
     .hero-content {
@@ -52,7 +52,7 @@ import { ButtonComponent } from '@apsara/ui';
     .logo-badge {
       width: 80px;
       height: 80px;
-      background: rgba(255, 255, 255, 0.2);
+      background: color-mix(in oklch, var(--primary-foreground) 20%, transparent);
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -91,7 +91,7 @@ import { ButtonComponent } from '@apsara/ui';
     }
 
     .tech-badge {
-      background: rgba(255, 255, 255, 0.15);
+      background: color-mix(in oklch, var(--primary-foreground) 15%, transparent);
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 14px;

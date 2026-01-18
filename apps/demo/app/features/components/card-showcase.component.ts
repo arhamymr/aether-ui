@@ -17,27 +17,10 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
 
       <app-card>
         <div class="p-6">
-          <h3 class="text-sm font-semibold text-dimmed uppercase tracking-wide mb-4">Variants</h3>
-          <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
-            <div class="flex flex-col gap-2">
-              <span class="text-xs text-dimmed font-medium">Elevated</span>
-              <app-card variant="elevated">
-                <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Elevated Card</div>
-              </app-card>
-            </div>
-            <div class="flex flex-col gap-2">
-              <span class="text-xs text-dimmed font-medium">Outlined</span>
-              <app-card variant="outlined">
-                <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Outlined Card</div>
-              </app-card>
-            </div>
-            <div class="flex flex-col gap-2">
-              <span class="text-xs text-dimmed font-medium">Tonal</span>
-              <app-card variant="tonal">
-                <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Tonal Card</div>
-              </app-card>
-            </div>
-          </div>
+          <h3 class="text-sm font-semibold text-dimmed uppercase tracking-wide mb-4">Basic Card</h3>
+          <app-card>
+            <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Card Content</div>
+          </app-card>
         </div>
       </app-card>
 
@@ -76,7 +59,7 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
       <app-card class="mt-6">
         <div class="p-6">
           <h3 class="text-sm font-semibold text-dimmed uppercase tracking-wide mb-4">Rich Content</h3>
-          <app-card variant="elevated">
+          <app-card>
             <div class="min-h-[100px]">
               <h4 class="text-base font-semibold text-foreground mb-2">Card Title</h4>
               <p class="text-sm text-dimmed mb-4 leading-relaxed">This is a sample card with multiple content elements including headers, text, and actions.</p>
@@ -108,12 +91,6 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
           </thead>
           <tbody>
             <tr>
-              <td class="p-3 border-b border-border text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">variant</code></td>
-              <td class="p-3 border-b border-border text-foreground">'elevated' | 'outlined' | 'tonal'</td>
-              <td class="p-3 border-b border-border text-foreground">'elevated'</td>
-              <td class="p-3 border-b border-border text-foreground">Visual style variant</td>
-            </tr>
-            <tr>
               <td class="p-3 border-b border-border text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">padding</code></td>
               <td class="p-3 border-b border-border text-foreground">'none' | 'small' | 'medium' | 'large'</td>
               <td class="p-3 border-b border-border text-foreground">'medium'</td>
@@ -128,7 +105,7 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
 export class CardShowcaseComponent {
   cardImportCode = `import { CardComponent } from '@apsara/ui/card';`;
 
-  cardUsageCode = `<app-card variant="elevated" padding="medium">
+  cardUsageCode = `<app-card padding="medium">
   <h3>Card Title</h3>
   <p>Card content goes here</p>
 </app-card>`;

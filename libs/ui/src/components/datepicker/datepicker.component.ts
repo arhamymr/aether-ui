@@ -55,7 +55,7 @@ import { cn } from '../../lib/cn';
                 class="w-8 h-8 text-sm rounded-lg
                        hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500
                        disabled:opacity-50 disabled:cursor-not-allowed"
-                [class.bg-blue-600]="isSelectedDate(day)"
+                [class.bg-primary]="isSelectedDate(day)"
                 [class.text-white]="isSelectedDate(day)"
                 [class.text-gray-300]="!day"
                 [class.cursor-default]="!day"

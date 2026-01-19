@@ -1,23 +1,20 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '@apsara/ui';
+import { ButtonComponent, BadgeComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, BadgeComponent],
   template: `
-    <section class="hero-section">
-      <div class="hero-content">
-        <div class="logo-badge">
-          <span>A</span>
-        </div>
-        <h1 class="hero-title">Apsara UI</h1>
-        <p class="hero-subtitle">
+    <section class="w-full px-6 py-20 text-center text-[var(--foreground)] border border-[var(--border)] rounded-[var(--radius-xl)] mx-auto">
+      <div class="w-full">
+        <h1 class="text-4xl md:text-5xl mb-4 leading-tight">Apsara Components UI</h1>
+        <p class="max-w-2xl mx-auto text-lg md:text-xl opacity-90 mb-8 leading-relaxed">
           A comprehensive Angular component library built with Angular Material.
           Accessible, customizable, and performant UI components for modern web applications.
         </p>
-        <div class="hero-actions">
+        <div class="flex flex-wrap justify-center gap-4">
           <app-button
             label="Browse Components"
             (clicked)="navigateTo('/components')" />
@@ -28,86 +25,14 @@ import { ButtonComponent } from '@apsara/ui';
         </div>
       </div>
 
-      <div class="tech-stack">
-        <span class="tech-badge">Angular 19+</span>
-        <span class="tech-badge">Standalone</span>
-        <span class="tech-badge">Signals</span>
-        <span class="tech-badge">Material</span>
+      <div class="flex flex-wrap justify-center gap-3 mt-12">
+        <app-badge label="Angular 19+" />
+        <app-badge label="Standalone" />
+        <app-badge label="Signals" />
+        <app-badge label="Material" />
       </div>
     </section>
-  `,
-  styles: [`
-    .hero-section {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover, color-mix(in oklch, var(--primary), black 10%)) 100%);
-      padding: 80px 24px;
-      text-align: center;
-      color: var(--primary-foreground);
-    }
-
-    .hero-content {
-      max-width: 700px;
-      margin: 0 auto 40px;
-    }
-
-    .logo-badge {
-      width: 80px;
-      height: 80px;
-      background: color-mix(in oklch, var(--primary-foreground) 20%, transparent);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 24px;
-      font-size: 40px;
-      font-weight: bold;
-    }
-
-    .hero-title {
-      font-size: 42px;
-      font-weight: 700;
-      margin: 0 0 16px;
-      line-height: 1.2;
-    }
-
-    .hero-subtitle {
-      font-size: 18px;
-      opacity: 0.9;
-      margin: 0 0 32px;
-      line-height: 1.6;
-    }
-
-    .hero-actions {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .tech-stack {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .tech-badge {
-      background: color-mix(in oklch, var(--primary-foreground) 15%, transparent);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .hero-title {
-        font-size: 32px;
-      }
-
-      .hero-subtitle {
-        font-size: 16px;
-      }
-    }
-  `]
+  `
 })
 export class HeroSectionComponent {
   private readonly router = inject(Router);

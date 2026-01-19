@@ -1,6 +1,13 @@
+import chalk from 'chalk';
+
 export const logger = {
-  info: (message: string) => console.log(`\x1b[36m${message}\x1b[0m`),
-  success: (message: string) => console.log(`\x1b[32m${message}\x1b[0m`),
-  warn: (message: string) => console.log(`\x1b[33m${message}\x1b[0m`),
-  error: (message: string) => console.log(`\x1b[31m${message}\x1b[0m`),
+  info: (message: string) => console.log(chalk.cyan(message)),
+  success: (message: string) => console.log(chalk.green(message)),
+  warn: (message: string) => console.log(chalk.yellow(message)),
+  error: (message: string) => console.log(chalk.red(message)),
+  debug: (message: string) => {
+    if (process.env.DEBUG) {
+      console.log(chalk.gray(`[DEBUG] ${message}`));
+    }
+  }
 };

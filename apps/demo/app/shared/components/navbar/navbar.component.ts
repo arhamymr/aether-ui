@@ -20,7 +20,7 @@ import { IconComponent, ButtonComponent } from '@apsara/ui';
               class="h-5 w-auto">
           </a>
           <span class="bg-[oklch(0.55_0.2_250/0.1)] text-[var(--primary)] text-[11px] font-semibold px-2 py-1 rounded-sm">
-            v1.0.0
+            v0 (alpha)
           </span>
         </div>
 
@@ -35,7 +35,7 @@ import { IconComponent, ButtonComponent } from '@apsara/ui';
           </a>
 
           <app-button
-            variant="tertiary"
+            variant="plain"
             size="icon"
             class="ml-2"
             (clicked)="themeService.toggle()">

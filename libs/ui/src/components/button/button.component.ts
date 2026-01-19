@@ -1,6 +1,5 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../lib/cn';
 
@@ -9,10 +8,10 @@ export type { VariantProps as ButtonVariantProps } from 'class-variance-authorit
 const buttonVariants = cva(
   [
     'relative font-medium select-none inline-flex justify-center items-center gap-2.5 transition-colors cursor-pointer',
-    'after:absolute after:inset-0 after:bg-white/15 after:opacity-0 hover:after:opacity-100 active:after:opacity-100 data-popup-open:after:opacity-100 after:transition-opacity',
+    'after:absolute after:inset-0 after:bg-black/5 after:opacity-0 hover:after:opacity-100 active:after:opacity-100 data-popup-open:after:opacity-100 after:transition-opacity',
     'focus:outline-0 focus-visible:outline-2 focus-visible:outline-offset-2',
     'disabled:opacity-70 disabled:pointer-events-none data-disabled:opacity-70 data-disabled:pointer-events-none',
-    'ring ring-[var(--border)] inset-shadow-2xs inset-shadow-white/15 shadow',
+    'ring ring-[var(--border)] inset-shadow-2xs inset-shadow-white/15 shadow-sm',
   ],
   {
     variants: {
@@ -79,7 +78,7 @@ const buttonVariants = cva(
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [CommonModule, MatProgressSpinnerModule],
+  imports: [CommonModule],
   template: `
     <button
       [disabled]="disabled() || loading()"
@@ -97,14 +96,14 @@ const buttonVariants = cva(
       (click)="onClick($event)">
 
       @if (loading()) {
-        <mat-spinner
-          [diameter]="spinnerSize"
-          class="button-spinner"
-          [class.inherit-color]="!loading()"></mat-spinner>
+        <svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" [class.size-3]="size() === 'xs' || size() === 'xs-icon'" [class.size-3.5]="size() === 'sm' || size() === 'sm-icon'" [class.size-4]="size() === 'md' || size() === 'icon'" [class.size-5]="size() === 'lg' || size() === 'lg-icon'">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
       }
 
       @if (label()) {
-        <span class="button-label" [class.invisible]="loading()">{{ label() }}</span>
+        <span class="[&:has(+_*)]:sr-only" [class.invisible]="loading()">{{ label() }}</span>
       }
 
       <ng-content />
@@ -113,28 +112,6 @@ const buttonVariants = cva(
   styles: [`
     :host {
       display: inline-block;
-    }
-
-    button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .button-spinner {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .button-spinner.inherit-color ::ng-deep svg {
-      fill: currentColor;
-    }
-
-    .button-label.invisible {
-      visibility: hidden;
     }
   `]
 })
@@ -151,20 +128,6 @@ export class ButtonComponent {
 
   cn = cn;
   buttonVariants = buttonVariants;
-
-  get spinnerSize(): number {
-    const sizeMap: Record<string, number> = {
-      'xs': 12,
-      'xs-icon': 12,
-      'sm': 14,
-      'sm-icon': 14,
-      'md': 16,
-      'icon': 16,
-      'lg': 20,
-      'lg-icon': 20
-    };
-    return sizeMap[this.size() || 'md'] || 16;
-  }
 
   onClick(event: Event): void {
     if (!this.disabled() && !this.loading()) {

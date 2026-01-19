@@ -1,8 +1,7 @@
 import { Command } from 'commander';
-import path from 'path';
-import { fileURLToPath } from 'url';
 import { getAvailableComponents } from '../utils/components.js';
 import { logger } from '../utils/logger.js';
+import { getComponentsPath } from '../utils/paths.js';
 
 export function listCommand(): Command {
   const command = new Command('list');
@@ -10,8 +9,7 @@ export function listCommand(): Command {
   command
     .description('List available components')
     .action(() => {
-      const __dirname = path.dirname(fileURLToPath(import.meta.url));
-      const componentsPath = path.resolve(__dirname, '../../../ui/src/components');
+      const componentsPath = getComponentsPath(import.meta.url);
       const components = getAvailableComponents(componentsPath);
 
       logger.info('Available components:\n');

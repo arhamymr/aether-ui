@@ -1,12 +1,11 @@
 import { Component, input, output, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent } from '../button';
 import { cn } from '../../lib/cn';
 
 @Component({
   selector: 'app-autocomplete',
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
+  imports: [CommonModule],
   template: `
     <div class="relative">
       <div class="relative">

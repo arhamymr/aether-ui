@@ -2,10 +2,11 @@ import { Component, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../../core/services';
+import { IconComponent, ButtonComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink, RouterLinkActive, NgOptimizedImage],
+  imports: [RouterLink, RouterLinkActive, NgOptimizedImage, IconComponent, ButtonComponent],
   template: `
     <nav class="fixed top-0 left-0 right-0 z-50 border-b border-[var(--border)] bg-[var(--background)] px-4">
       <div class="max-w-[1400px] mx-auto flex items-center justify-between h-16">
@@ -16,7 +17,7 @@ import { ThemeService } from '../../../core/services';
               width="100"
               height="25"
               alt="Logo"
-              class="h-6 w-auto">
+              class="h-5 w-auto">
           </a>
           <span class="bg-[oklch(0.55_0.2_250/0.1)] text-[var(--primary)] text-[11px] font-semibold px-2 py-1 rounded-sm">
             v1.0.0
@@ -33,15 +34,17 @@ import { ThemeService } from '../../../core/services';
             Docs
           </a>
 
-          <button
-            (click)="themeService.toggle()"
-            class="ml-2 bg-[var(--accent)] border border-[var(--border)] text-[var(--foreground)] px-4 py-2 rounded-md text-sm font-medium cursor-pointer transition-colors hover:bg-[var(--border)]">
+          <app-button
+            variant="tertiary"
+            size="icon"
+            class="ml-2"
+            (clicked)="themeService.toggle()">
             @if (themeService.theme() === 'dark') {
-              <span>Light</span>
+              <app-icon name="light_mode" />
             } @else {
-              <span>Dark</span>
+              <app-icon name="dark_mode" />
             }
-          </button>
+          </app-button>
         </div>
       </div>
     </nav>

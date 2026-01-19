@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ButtonComponent, CardComponent } from '@apsara/ui';
+import { CardComponent } from '@apsara/ui';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-resources-section',
   standalone: true,
-  imports: [ButtonComponent, CardComponent, MatIconModule],
+  imports: [CardComponent, MatIconModule],
   template: `
     <section class="resources-section">
       <h2 class="section-title">Explore</h2>

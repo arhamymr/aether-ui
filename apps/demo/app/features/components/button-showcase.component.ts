@@ -31,7 +31,7 @@ interface ButtonProp {
           [modelValue]="variantsActiveTab()"
           (changed)="variantsActiveTab.set($event)">
           @if (variantsActiveTab() === 'preview') {
-            <div class="p-6">
+            <div>
               <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                 <div class="flex flex-col gap-2">
                   <span class="text-xs text-dimmed font-medium">Primary</span>
@@ -60,7 +60,7 @@ interface ButtonProp {
               </div>
             </div>
           } @else {
-            <div class="p-6">
+            <div>
               <app-code-snippet [code]="variantsCode" language="html" />
             </div>
           }
@@ -73,7 +73,7 @@ interface ButtonProp {
           [modelValue]="sizesActiveTab()"
           (changed)="sizesActiveTab.set($event)">
           @if (sizesActiveTab() === 'preview') {
-            <div class="p-6">
+            <div>
               <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                 <div class="flex flex-col gap-2">
                   <span class="text-xs text-dimmed font-medium">XS</span>
@@ -100,7 +100,7 @@ interface ButtonProp {
               </div>
             </div>
           } @else {
-            <div class="p-6">
+            <div>
               <app-code-snippet [code]="sizesCode" language="html" />
             </div>
           }
@@ -113,7 +113,7 @@ interface ButtonProp {
           [modelValue]="statesActiveTab()"
           (changed)="statesActiveTab.set($event)">
           @if (statesActiveTab() === 'preview') {
-            <div class="p-6">
+            <div>
               <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                 <div class="flex flex-col gap-2">
                   <span class="text-xs text-dimmed font-medium">Default</span>
@@ -134,7 +134,7 @@ interface ButtonProp {
               </div>
             </div>
           } @else {
-            <div class="p-6">
+            <div>
               <app-code-snippet [code]="statesCode" language="html" />
             </div>
           }
@@ -147,7 +147,7 @@ interface ButtonProp {
           [modelValue]="iconTab()"
           (changed)="iconTab.set($event)">
           @if (iconTab() === 'preview') {
-            <div class="p-6">
+            <div>
               <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                 <div class="flex flex-col gap-2">
                   <span class="text-xs text-dimmed font-medium">Icon Left</span>
@@ -188,7 +188,7 @@ interface ButtonProp {
               </div>
             </div>
           } @else {
-            <div class="p-6">
+            <div>
               <app-code-snippet [code]="iconCode" language="html" />
             </div>
           }
@@ -203,24 +203,19 @@ interface ButtonProp {
 
       <div class="mt-6">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
-        <app-table [rows]="propsData()">
-          <ng-container table-header>
-            <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-            <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-            <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-            <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
-          </ng-container>
-          <ng-container table-cell>
-            @for (prop of propsData(); track prop.name) {
-              <tr>
-                <td class="p-3 border-b border-border text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
-                <td class="p-3 border-b border-border text-foreground">{{ prop.type }}</td>
-                <td class="p-3 border-b border-border text-foreground">{{ prop.default }}</td>
-                <td class="p-3 border-b border-border text-foreground">{{ prop.description }}</td>
-              </tr>
-            }
-          </ng-container>
-        </app-table>
+        <ng-template #tableHeader>
+          <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 border-b border-border bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+        </ng-template>
+        <ng-template #tableCell let-prop>
+          <td class="p-3 border-b border-border text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 border-b border-border text-foreground text-dimmed">{{ prop.type }}</td>
+          <td class="p-3 border-b border-border text-foreground font-mono text-xs">{{ prop.default }}</td>
+          <td class="p-3 border-b border-border text-foreground">{{ prop.description }}</td>
+        </ng-template>
+        <app-table [rows]="propsData()" [tableHeaderTemplate]="tableHeader" [tableCellTemplate]="tableCell" />
       </div>
     </section>
   `,
@@ -264,6 +259,7 @@ export class ButtonShowcaseComponent {
   label="Click me"
   variant="primary"
   size="md"
+  rounded="md"
   (clicked)="onClick($event)" />`;
 
   variantsCode = `<app-button label="Primary" variant="primary" />
@@ -301,11 +297,12 @@ export class ButtonShowcaseComponent {
   propsData = (): ButtonProp[] => [
     { name: 'label', type: 'string', default: "''", description: 'Button text content' },
     { name: 'variant', type: "'primary' | 'secondary' | 'tertiary' | 'danger' | 'outline' | 'plain'", default: "'primary'", description: 'Visual style variant' },
-    { name: 'size', type: "'xs' | 'sm' | 'md' | 'lg' | 'icon'", default: "'md'", description: 'Button size' },
+    { name: 'size', type: "'xs' | 'sm' | 'md' | 'lg' | 'xs-icon' | 'sm-icon' | 'icon' | 'lg-icon'", default: "'md'", description: 'Button size (use icon suffix for icon-only buttons)' },
+    { name: 'rounded', type: "'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full'", default: "'md'", description: 'Button border radius' },
     { name: 'disabled', type: 'boolean', default: 'false', description: 'Disables the button' },
     { name: 'loading', type: 'boolean', default: 'false', description: 'Shows loading spinner' },
     { name: 'block', type: 'boolean', default: 'false', description: 'Makes button full width' },
-    { name: 'pill', type: 'boolean', default: 'false', description: 'Makes button pill shaped' },
+    { name: 'popupOpen', type: 'boolean | undefined', default: 'undefined', description: 'State for popup button active state' },
     { name: 'clicked', type: 'EventEmitter<Event>', default: '-', description: 'Emitted on button click' }
   ];
 }

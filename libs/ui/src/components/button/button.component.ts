@@ -43,14 +43,14 @@ const buttonVariants = cva(
         ],
       },
       size: {
-        'xs': 'h-7 px-2 text-xs *:[svg]:size-3.5',
-        'xs-icon': 'size-7 *:[svg]:size-3.5',
-        'sm': 'h-[34px] px-3 text-sm *:[svg]:size-4',
-        'sm-icon': 'size-[34px] *:[svg]:size-4',
-        'md': 'h-[38px] px-4 text-sm *:[svg]:size-[18px]',
-        'icon': 'size-[38px] *:[svg]:size-[18px]',
-        'lg': 'h-[46px] px-[22px] text-sm *:[svg]:size-[18px]',
-        'lg-icon': 'size-[46px] *:[svg]:size-[18px]',
+        'xs': 'h-7 px-2 text-xs *:[svg]:size-3',
+        'xs-icon': 'size-7 *:[svg]:size-3',
+        'sm': 'h-[34px] px-3 text-sm *:[svg]:size-3.5',
+        'sm-icon': 'size-[34px] *:[svg]:size-3.5',
+        'md': 'h-[38px] px-4 text-sm *:[svg]:size-4',
+        'icon': 'size-[38px] *:[svg]:size-4',
+        'lg': 'h-[46px] px-[22px] text-sm *:[svg]:size-5',
+        'lg-icon': 'size-[46px] *:[svg]:size-5',
       },
       rounded: {
         none: 'rounded-none [&]:after:rounded-none',
@@ -154,16 +154,16 @@ export class ButtonComponent {
 
   get spinnerSize(): number {
     const sizeMap: Record<string, number> = {
-      'xs': 14,
-      'xs-icon': 14,
-      'sm': 16,
-      'sm-icon': 16,
-      'md': 18,
-      'icon': 18,
-      'lg': 18,
-      'lg-icon': 18
+      'xs': 12,
+      'xs-icon': 12,
+      'sm': 14,
+      'sm-icon': 14,
+      'md': 16,
+      'icon': 16,
+      'lg': 20,
+      'lg-icon': 20
     };
-    return sizeMap[this.size() || 'md'] || 18;
+    return sizeMap[this.size() || 'md'] || 16;
   }
 
   onClick(event: Event): void {

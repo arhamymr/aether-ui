@@ -1,7 +1,6 @@
 import { Component, input, output, signal, forwardRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, FormsModule } from '@angular/forms';
-import { ButtonComponent } from '../button';
 import { cn } from '../../lib/cn';
 
 export interface SelectOption {
@@ -15,7 +14,7 @@ export interface SelectOption {
 @Component({
   selector: 'app-select',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonComponent],
+  imports: [CommonModule, FormsModule],
   template: `
     <div class="relative">
       <button

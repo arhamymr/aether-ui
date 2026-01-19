@@ -1,13 +1,12 @@
 import { Component, input, output, inject, signal, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CdkMenuModule, CdkMenuItem, CdkMenuTrigger } from '@angular/cdk/menu';
-import { ButtonComponent } from '../button';
 import { cn } from '../../lib/cn';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, CdkMenuModule, CdkMenuTrigger, CdkMenuItem, ButtonComponent],
+  imports: [CommonModule, CdkMenuModule, CdkMenuTrigger, CdkMenuItem],
   template: `
     @if (trigger()) {
       <button

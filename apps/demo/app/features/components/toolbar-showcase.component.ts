@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolbarComponent } from '@apsara/ui';
-import { ButtonComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-toolbar-showcase',
   standalone: true,
-  imports: [CommonModule, ToolbarComponent, ButtonComponent],
+  imports: [CommonModule, ToolbarComponent],
   template: `
     <div class="ai-review-banner">
       <span class="ai-review-icon">⚠️</span>

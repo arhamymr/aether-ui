@@ -1,12 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepperComponent } from '@apsara/ui';
-import { ButtonComponent } from '@apsara/ui';
 
 @Component({
   selector: 'app-stepper-showcase',
   standalone: true,
-  imports: [CommonModule, StepperComponent, ButtonComponent],
+  imports: [CommonModule, StepperComponent],
   template: `
     <div class="ai-review-banner">
       <span class="ai-review-icon">⚠️</span>

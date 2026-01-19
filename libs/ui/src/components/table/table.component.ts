@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, TemplateRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cn } from '../../lib/cn';
 
@@ -7,33 +7,50 @@ import { cn } from '../../lib/cn';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="overflow-x-auto border border-gray-200 rounded-lg">
+    <div [class]="cn('overflow-x-auto border border-[var(--border)] rounded-lg', $class())">
       <table class="w-full text-sm">
-        <thead class="bg-gray-50">
+        <thead class="bg-[var(--tertiary)]">
           <tr>
-            <ng-content select="[table-header-1]" />
-            <ng-content select="[table-header-2]" />
-            <ng-content select="[table-header-3]" />
-            <ng-content select="[table-header-4]" />
-            <ng-content select="[table-header-5]" />
+            @if (tableHeaderTemplate()) {
+              <ng-container *ngTemplateOutlet="tableHeaderTemplate()" />
+            } @else {
+              <th class="text-left p-3 border-b border-[var(--border)] bg-[var(--tertiary)] font-semibold text-[var(--dimmed)] text-xs uppercase tracking-wide">Prop</th>
+              <th class="text-left p-3 border-b border-[var(--border)] bg-[var(--tertiary)] font-semibold text-[var(--dimmed)] text-xs uppercase tracking-wide">Type</th>
+              <th class="text-left p-3 border-b border-[var(--border)] bg-[var(--tertiary)] font-semibold text-[var(--dimmed)] text-xs uppercase tracking-wide">Default</th>
+              <th class="text-left p-3 border-b border-[var(--border)] bg-[var(--tertiary)] font-semibold text-[var(--dimmed)] text-xs uppercase tracking-wide">Description</th>
+            }
           </tr>
         </thead>
-        <tbody class="divide-y divide-gray-200">
+        <tbody class="divide-y divide-[var(--border)]">
           @for (row of rows(); track $index) {
-            <tr class="hover:bg-gray-50">
-              <td><ng-content select="[table-cell-1]" /></td>
-              <td><ng-content select="[table-cell-2]" /></td>
-              <td><ng-content select="[table-cell-3]" /></td>
-              <td><ng-content select="[table-cell-4]" /></td>
-              <td><ng-content select="[table-cell-5]" /></td>
+            <tr class="hover:bg-[var(--tertiary)]">
+              @if (tableCellTemplate()) {
+                <ng-container *ngTemplateOutlet="tableCellTemplate(); context: { $implicit: row, index: $index }" />
+              } @else {
+                <td class="p-3 border-b border-[var(--border)] text-[var(--foreground)]">{{ row }}</td>
+              }
             </tr>
           }
         </tbody>
       </table>
     </div>
-  `
+  `,
+  styles: [`
+    :host {
+      display: block;
+    }
+    tr {
+      display: table-row;
+    }
+    td, th {
+      display: table-cell;
+    }
+  `]
 })
 export class TableComponent {
   rows = input<unknown[]>([]);
+  $class = input('');
+  tableHeaderTemplate = input<TemplateRef<void> | null>(null);
+  tableCellTemplate = input<TemplateRef<{ $implicit: unknown; index: number }> | null>(null);
   cn = cn;
 }

@@ -28,7 +28,7 @@ import { tabsShowcaseCode } from './tabs-showcase.code';
       </div>
 
       <app-card>
-        <div class="p-6">
+        <div>
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-sm font-semibold text-dimmed uppercase tracking-wide">Account Settings</h3>
             <div class="flex gap-1 bg-tertiary rounded-lg p-1">
@@ -110,7 +110,7 @@ import { tabsShowcaseCode } from './tabs-showcase.code';
       </app-card>
 
       <app-card class="mt-6">
-        <div class="p-6">
+        <div>
           <div class="flex items-center justify-between mb-4">
             <h3 class="text-sm font-semibold text-dimmed uppercase tracking-wide">States</h3>
             <div class="flex gap-1 bg-tertiary rounded-lg p-1">

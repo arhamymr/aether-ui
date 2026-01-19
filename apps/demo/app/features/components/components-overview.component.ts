@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { MatIconModule } from '@angular/material/icon';
+import { IconComponent } from '@apsara/ui';
 
 interface ComponentItem {
   id: string;
@@ -17,31 +17,37 @@ interface ComponentCategory {
 @Component({
   selector: 'app-components-overview',
   standalone: true,
-  imports: [RouterLink, MatIconModule],
+  imports: [RouterLink, IconComponent],
   template: `
-    <div class="components-page">
-      <header class="hero">
-        <h1>Components</h1>
-        <p>A comprehensive library of accessible, customizable, and performant UI components</p>
+    <div class="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header class="text-center bg-[var(--surface)] border-b border-[var(--border)] px-8 py-16">
+        <h1 class="text-[2.5rem] font-medium mb-4 text-[var(--foreground)]">Components</h1>
+        <p class="text-[1.125rem] text-[var(--dimmed)] max-w-[600px] mx-auto leading-relaxed">
+          A comprehensive library of accessible, customizable, and performant UI components
+        </p>
       </header>
 
-      <main class="categories-container">
+      <main class="max-w-[1400px] mx-auto pt-16">
         @for (category of categories; track category.name) {
-          <section class="category-section">
-            <h2 class="category-title">{{ category.name }}</h2>
-            <div class="components-grid">
+          <section class="mb-14">
+            <h2 class="text-[1.25rem] font-medium text-[var(--foreground)] mb-6 pb-3 border-b border-[var(--border)]">
+              {{ category.name }}
+            </h2>
+            <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-4">
               @for (item of category.items; track item.id) {
-                <a [routerLink]="'/components/' + item.id" class="component-card">
-                  <div class="card-icon">
-                    <mat-icon>{{ item.icon }}</mat-icon>
+                <a
+                  [routerLink]="'/components/' + item.id"
+                  class="group flex items-start gap-4 p-5 bg-[var(--card)] border border-[var(--card-border)] rounded-xl no-underline text-inherit transition-all duration-200 hover:border-[var(--primary)] hover:shadow-lg hover:-translate-y-0.5">
+                  <div class="flex items-center justify-center size-12 bg-[var(--accent)] rounded-xl flex-shrink-0">
+                    <app-icon [name]="item.icon" class="text-[var(--primary)]" />
                   </div>
-                  <div class="card-content">
-                    <h3 class="card-title">{{ item.title }}</h3>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-base font-medium mb-0.5 text-[var(--foreground)]">{{ item.title }}</h3>
                     @if (item.description) {
-                      <p class="card-description">{{ item.description }}</p>
+                      <p class="text-sm text-[var(--dimmed)] leading-relaxed m-0">{{ item.description }}</p>
                     }
                   </div>
-                  <mat-icon class="arrow-icon">arrow_forward</mat-icon>
+                  <app-icon name="arrow_forward" class="text-[var(--dimmed)] text-xs self-center opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
                 </a>
               }
             </div>
@@ -49,138 +55,10 @@ interface ComponentCategory {
         }
       </main>
     </div>
-  `,
-  styles: [`
-    :host {
-      display: block;
-    }
-
-    .components-page {
-      min-height: 100vh;
-      background: var(--background, #fafafa);
-      color: var(--foreground, #1a1b1f);
-    }
-
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: var(--surface-container, #f5f5f5);
-      border-bottom: 1px solid var(--border, #e0e0e0);
-    }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 500;
-      margin: 0 0 1rem;
-      color: var(--foreground);
-    }
-
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--foreground-variant, #666);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-
-    .categories-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 3rem 2rem;
-    }
-
-    .category-section {
-      margin-bottom: 3.5rem;
-    }
-
-    .category-title {
-      font-size: 1.25rem;
-      font-weight: 500;
-      color: var(--foreground);
-      margin: 0 0 1.5rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border, #e0e0e0);
-    }
-
-    .components-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-    }
-
-    .component-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      padding: 1.25rem;
-      background: var(--surface, #fff);
-      border: 1px solid var(--border, #e0e0e0);
-      border-radius: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: all 0.2s ease;
-    }
-
-    .component-card:hover {
-      border-color: var(--primary, #005cbb);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      transform: translateY(-2px);
-    }
-
-    .card-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: var(--surface-variant, #f0f0f0);
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-
-    .card-icon mat-icon {
-      color: var(--primary, #005cbb);
-      font-size: 24px;
-      width: 24px;
-      height: 24px;
-    }
-
-    .card-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 500;
-      margin: 0 0 0.25rem;
-      color: var(--foreground);
-    }
-
-    .card-description {
-      font-size: 0.875rem;
-      color: var(--foreground-variant, #666);
-      margin: 0;
-      line-height: 1.4;
-    }
-
-    .arrow-icon {
-      color: var(--foreground-variant, #999);
-      font-size: 20px;
-      width: 20px;
-      height: 20px;
-      align-self: center;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .component-card:hover .arrow-icon {
-      opacity: 1;
-    }
-  `]
+  `
 })
 export class ComponentsOverviewComponent {
-  categories = [
+  categories: ComponentCategory[] = [
     {
       name: 'Alert',
       items: [

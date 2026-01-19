@@ -68,19 +68,25 @@ interface User {
               <th table-header-3 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Role</th>
 
               @for (user of basicUsers(); track user.id) {
-                <td table-cell-1 class="px-4 py-4 whitespace-nowrap text-sm text-foreground">{{ user.name }}</td>
-                <td table-cell-2 class="px-4 py-4 whitespace-nowrap text-sm text-dimmed">{{ user.email }}</td>
-                <td table-cell-3 class="px-4 py-4 whitespace-nowrap text-sm text-dimmed">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                    [class.bg-primary/10]="user.role === 'Admin'"
-                    [class.text-primary]="user.role === 'Admin'"
-                    [class.bg-tertiary]="user.role === 'User'"
-                    [class.text-dimmed]="user.role === 'User'"
-                    [class.bg-accent/10]="user.role === 'Editor'"
-                    [class.text-accent]="user.role === 'Editor'">
-                    {{ user.role }}
+                <ng-container table-cell-1>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-foreground block">{{ user.name }}</span>
+                </ng-container>
+                <ng-container table-cell-2>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-dimmed block">{{ user.email }}</span>
+                </ng-container>
+                <ng-container table-cell-3>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-dimmed block">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                      [class.bg-primary/10]="user.role === 'Admin'"
+                      [class.text-primary]="user.role === 'Admin'"
+                      [class.bg-tertiary]="user.role === 'User'"
+                      [class.text-dimmed]="user.role === 'User'"
+                      [class.bg-accent/10]="user.role === 'Editor'"
+                      [class.text-accent]="user.role === 'Editor'">
+                      {{ user.role }}
+                    </span>
                   </span>
-                </td>
+                </ng-container>
               }
             </app-table>
           } @else {
@@ -122,34 +128,40 @@ interface User {
               <th table-header-3 class="px-4 py-3 text-right text-xs font-medium text-dimmed uppercase tracking-wider">Actions</th>
 
               @for (user of usersWithActions(); track user.id) {
-                <td table-cell-1 class="px-4 py-4">
-                  <div class="flex items-center">
-                    <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span class="text-sm font-medium text-primary">{{ user.name.charAt(0) }}</span>
-                    </div>
-                    <div class="ml-4">
-                      <div class="text-sm font-medium text-foreground">{{ user.name }}</div>
-                      <div class="text-sm text-dimmed">{{ user.email }}</div>
+                <ng-container table-cell-1>
+                  <div class="px-4 py-4">
+                    <div class="flex items-center">
+                      <div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span class="text-sm font-medium text-primary">{{ user.name.charAt(0) }}</span>
+                      </div>
+                      <div class="ml-4">
+                        <div class="text-sm font-medium text-foreground">{{ user.name }}</div>
+                        <div class="text-sm text-dimmed">{{ user.email }}</div>
+                      </div>
                     </div>
                   </div>
-                </td>
-                <td table="px-4-cell-2 class py-4 whitespace-nowrap">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                    [class.bg-success/10]="user.status === 'Active'"
-                    [class.text-success]="user.status === 'Active'"
-                    [class.bg-warning/10]="user.status === 'Pending'"
-                    [class.text-warning]="user.status === 'Pending'"
-                    [class.bg-danger/10]="user.status === 'Inactive'"
-                    [class.text-danger]="user.status === 'Inactive'">
-                    {{ user.status }}
-                  </span>
-                </td>
-                <td table-cell-3 class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <div class="flex items-center justify-end gap-2">
-                    <app-button label="Edit" size="sm" variant="plain" />
-                    <app-button label="Delete" size="sm" variant="plain" />
+                </ng-container>
+                <ng-container table-cell-2>
+                  <div class="px-4 py-4 whitespace-nowrap">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                      [class.bg-success/10]="user.status === 'Active'"
+                      [class.text-success]="user.status === 'Active'"
+                      [class.bg-warning/10]="user.status === 'Pending'"
+                      [class.text-warning]="user.status === 'Pending'"
+                      [class.bg-danger/10]="user.status === 'Inactive'"
+                      [class.text-danger]="user.status === 'Inactive'">
+                      {{ user.status }}
+                    </span>
                   </div>
-                </td>
+                </ng-container>
+                <ng-container table-cell-3>
+                  <div class="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <div class="flex items-center justify-end gap-2">
+                      <app-button label="Edit" size="sm" variant="plain" />
+                      <app-button label="Delete" size="sm" variant="plain" />
+                    </div>
+                  </div>
+                </ng-container>
               }
             </app-table>
           } @else {
@@ -192,24 +204,32 @@ interface User {
               <th table-header-4 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Status</th>
 
               @for (metric of metrics(); track metric.name) {
-                <td table-cell-1 class="px-4 py-4 whitespace-nowrap text-sm font-medium text-foreground">{{ metric.name }}</td>
-                <td table-cell-2 class="px-4 py-4 whitespace-nowrap text-sm text-foreground">{{ metric.value }}</td>
-                <td table-cell-3 class="px-4 py-4 whitespace-nowrap text-sm"
-                  [class.text-success]="metric.change.startsWith('+')"
-                  [class.text-danger]="metric.change.startsWith('-')">
-                  {{ metric.change }}
-                </td>
-                <td table-cell-4 class="px-4 py-4 whitespace-nowrap">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                    [class.bg-success/10]="metric.status === 'Good'"
-                    [class.text-success]="metric.status === 'Good'"
-                    [class.bg-warning/10]="metric.status === 'Warning'"
-                    [class.text-warning]="metric.status === 'Warning'"
-                    [class.bg-danger/10]="metric.status === 'Critical'"
-                    [class.text-danger]="metric.status === 'Critical'">
-                    {{ metric.status }}
+                <ng-container table-cell-1>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm font-medium text-foreground block">{{ metric.name }}</span>
+                </ng-container>
+                <ng-container table-cell-2>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-foreground block">{{ metric.value }}</span>
+                </ng-container>
+                <ng-container table-cell-3>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm block"
+                    [class.text-success]="metric.change.startsWith('+')"
+                    [class.text-danger]="metric.change.startsWith('-')">
+                    {{ metric.change }}
                   </span>
-                </td>
+                </ng-container>
+                <ng-container table-cell-4>
+                  <span class="px-4 py-4 whitespace-nowrap block">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                      [class.bg-success/10]="metric.status === 'Good'"
+                      [class.text-success]="metric.status === 'Good'"
+                      [class.bg-warning/10]="metric.status === 'Warning'"
+                      [class.text-warning]="metric.status === 'Warning'"
+                      [class.bg-danger/10]="metric.status === 'Critical'"
+                      [class.text-danger]="metric.status === 'Critical'">
+                      {{ metric.status }}
+                    </span>
+                  </span>
+                </ng-container>
               }
             </app-table>
           } @else {
@@ -253,23 +273,33 @@ interface User {
               <th table-header-5 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Status</th>
 
               @for (order of orders(); track order.id) {
-                <td table-cell-1 class="px-4 py-4 whitespace-nowrap text-sm font-medium text-foreground">#{{ order.id }}</td>
-                <td table-cell-2 class="px-4 py-4 whitespace-nowrap text-sm text-foreground">{{ order.customer }}</td>
-                <td table-cell-3 class="px-4 py-4 whitespace-nowrap text-sm text-dimmed">{{ order.date }}</td>
-                <td table-cell-4 class="px-4 py-4 whitespace-nowrap text-sm text-right font-medium text-foreground">{{ order.amount }}</td>
-                <td table-cell-5 class="px-4 py-4 whitespace-nowrap">
-                  <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
-                    [class.bg-success/10]="order.status === 'Delivered'"
-                    [class.text-success]="order.status === 'Delivered'"
-                    [class.bg-primary/10]="order.status === 'Processing'"
-                    [class.text-primary]="order.status === 'Processing'"
-                    [class.bg-warning/10]="order.status === 'Shipped'"
-                    [class.text-warning]="order.status === 'Shipped'"
-                    [class.bg-danger/10]="order.status === 'Cancelled'"
-                    [class.text-danger]="order.status === 'Cancelled'">
-                    {{ order.status }}
+                <ng-container table-cell-1>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm font-medium text-foreground block">#{{ order.id }}</span>
+                </ng-container>
+                <ng-container table-cell-2>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-foreground block">{{ order.customer }}</span>
+                </ng-container>
+                <ng-container table-cell-3>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-dimmed block">{{ order.date }}</span>
+                </ng-container>
+                <ng-container table-cell-4>
+                  <span class="px-4 py-4 whitespace-nowrap text-sm text-right font-medium text-foreground block">{{ order.amount }}</span>
+                </ng-container>
+                <ng-container table-cell-5>
+                  <span class="px-4 py-4 whitespace-nowrap block">
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
+                      [class.bg-success/10]="order.status === 'Delivered'"
+                      [class.text-success]="order.status === 'Delivered'"
+                      [class.bg-primary/10]="order.status === 'Processing'"
+                      [class.text-primary]="order.status === 'Processing'"
+                      [class.bg-warning/10]="order.status === 'Shipped'"
+                      [class.text-warning]="order.status === 'Shipped'"
+                      [class.bg-danger/10]="order.status === 'Cancelled'"
+                      [class.text-danger]="order.status === 'Cancelled'">
+                      {{ order.status }}
+                    </span>
                   </span>
-                </td>
+                </ng-container>
               }
             </app-table>
           } @else {

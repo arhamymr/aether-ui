@@ -53,7 +53,7 @@ interface ShowcaseItem {
           </span>
         </div>
         <h2 class="text-4xl text-foreground mb-4 tracking-tight">Beautiful, accessible components</h2>
-        <p class="text-lg text-dimmed max-w-xl mx-auto leading-relaxed">
+        <p class="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
           Copy and paste components into your apps. Accessible, customizable, and open source.
         </p>
       </div>

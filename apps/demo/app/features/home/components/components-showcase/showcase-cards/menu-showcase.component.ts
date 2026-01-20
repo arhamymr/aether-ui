@@ -10,7 +10,7 @@ import { CardComponent, ButtonComponent } from '@apsara/ui';
     <app-card class="flex-1 flex flex-col h-full">
       <div class="mb-6">
         <h3 class="text-lg font-semibold text-foreground mb-1.5">Dropdown Menu</h3>
-        <p class="text-sm text-dimmed">Context menus and dropdowns</p>
+        <p class="text-sm text-muted-foreground">Context menus and dropdowns</p>
       </div>
       <div class="flex-1 flex items-center justify-center min-h-[150px]">
         <div class="flex gap-2">

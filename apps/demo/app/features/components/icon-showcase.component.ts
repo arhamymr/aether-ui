@@ -22,7 +22,7 @@ interface IconProp {
     <section id="icon" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Icon</h2>
-        <p class="text-dimmed">Lucide icons for Angular applications</p>
+        <p class="text-muted-foreground">Lucide icons for Angular applications</p>
       </div>
 
       <app-card>
@@ -31,7 +31,7 @@ interface IconProp {
             <div class="p-6">
               <div class="space-y-6">
                 <div>
-                  <span class="text-xs text-dimmed font-medium mb-3 block">Sizes</span>
+                  <span class="text-xs text-muted-foreground font-medium mb-3 block">Sizes</span>
                   <div class="flex items-center gap-4">
                     <lucide-angular [img]="House" [size]="12" />
                     <lucide-angular [img]="House" [size]="16" />
@@ -41,7 +41,7 @@ interface IconProp {
                   </div>
                 </div>
                 <div>
-                  <span class="text-xs text-dimmed font-medium mb-3 block">Action Icons</span>
+                  <span class="text-xs text-muted-foreground font-medium mb-3 block">Action Icons</span>
                   <div class="flex items-center gap-4">
                     <lucide-angular [img]="Pencil" />
                     <lucide-angular [img]="Trash2" />
@@ -51,7 +51,7 @@ interface IconProp {
                   </div>
                 </div>
                 <div>
-                  <span class="text-xs text-dimmed font-medium mb-3 block">Navigation Icons</span>
+                  <span class="text-xs text-muted-foreground font-medium mb-3 block">Navigation Icons</span>
                   <div class="flex items-center gap-4">
                     <lucide-angular [img]="ChevronLeft" />
                     <lucide-angular [img]="ChevronRight" />
@@ -81,12 +81,12 @@ interface IconProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
           <td class="p-3 text-foreground">{{ prop.type }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>
         </ng-template>

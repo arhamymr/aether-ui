@@ -19,7 +19,7 @@ import { HighlightService } from '../../services/highlight.service';
       }
       <button
         (click)="copyCode()"
-        class="absolute top-2 right-2 bg-transparent border-none cursor-pointer p-1 rounded-md transition-colors duration-200 hover:bg-surface-variant"
+        class="absolute top-2 right-2 bg-transparent border-none cursor-pointer p-1 rounded-md transition-colors duration-200 hover:bg-muted"
         [attr.aria-label]="copied() ? 'Copied' : 'Copy code'">
         <app-button size="icon" [variant]="copied() ? 'primary' : 'plain'">
           @if (copied()) {

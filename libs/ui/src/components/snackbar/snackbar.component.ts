@@ -21,7 +21,7 @@ import { cn } from '../../lib/cn';
             <p class="text-sm font-medium text-foreground">{{ title() }}</p>
           }
           @if (message()) {
-            <p class="text-sm text-dimmed">{{ message() }}</p>
+            <p class="text-sm text-muted-foreground">{{ message() }}</p>
           }
         </div>
         @if (showClose()) {

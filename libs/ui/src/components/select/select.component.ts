@@ -26,7 +26,7 @@ export interface SelectOption {
         [attr.aria-expanded]="isOpen()"
         [attr.aria-labelledby]="ariaLabelledBy()">
         @if (placeholder() && !selectedLabel()) {
-          <span class="text-dimmed">{{ placeholder() }}</span>
+          <span class="text-muted-foreground">{{ placeholder() }}</span>
         }
         @if (selectedLabel()) {
           <span>{{ selectedLabel() }}</span>
@@ -57,7 +57,7 @@ export interface SelectOption {
             </button>
           }
           @if (filteredOptions.length === 0) {
-            <div class="px-3 py-2 text-sm text-dimmed">{{ noResultsText() }}</div>
+            <div class="px-3 py-2 text-sm text-muted-foreground">{{ noResultsText() }}</div>
           }
         </div>
       }

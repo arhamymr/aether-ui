@@ -22,7 +22,7 @@ interface CardProp {
     <section id="card" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Card</h2>
-        <p class="text-dimmed">Cards contain content and actions about a single subject</p>
+        <p class="text-muted-foreground">Cards contain content and actions about a single subject</p>
       </div>
 
       <app-card>
@@ -31,15 +31,15 @@ interface CardProp {
             <div class="p-6">
               <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                 <div class="flex flex-col gap-2">
-                  <span class="text-xs text-dimmed font-medium">Basic Card</span>
+                  <span class="text-xs text-muted-foreground font-medium">Basic Card</span>
                   <app-card>
-                    <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Card Content</div>
+                    <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Card Content</div>
                   </app-card>
                 </div>
                 <div class="flex flex-col gap-2">
-                  <span class="text-xs text-dimmed font-medium">With Padding</span>
+                  <span class="text-xs text-muted-foreground font-medium">With Padding</span>
                   <app-card padding="medium">
-                    <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Padded Content</div>
+                    <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Padded Content</div>
                   </app-card>
                 </div>
               </div>
@@ -69,27 +69,27 @@ interface CardProp {
               <div class="p-6">
                 <div class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-6">
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">None</span>
+                    <span class="text-xs text-muted-foreground font-medium">None</span>
                     <app-card padding="none">
-                      <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm border border-dashed border-border rounded">No Padding</div>
+                      <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm border border-dashed border-border rounded">No Padding</div>
                     </app-card>
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Small</span>
+                    <span class="text-xs text-muted-foreground font-medium">Small</span>
                     <app-card padding="small">
-                      <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Small</div>
+                      <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Small</div>
                     </app-card>
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Medium</span>
+                    <span class="text-xs text-muted-foreground font-medium">Medium</span>
                     <app-card padding="medium">
-                      <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Medium</div>
+                      <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Medium</div>
                     </app-card>
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Large</span>
+                    <span class="text-xs text-muted-foreground font-medium">Large</span>
                     <app-card padding="large">
-                      <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Large</div>
+                      <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Large</div>
                     </app-card>
                   </div>
                 </div>
@@ -110,7 +110,7 @@ interface CardProp {
                 <app-card>
                   <div class="min-h-[100px]">
                     <h4 class="text-base font-semibold text-foreground mb-2">Card Title</h4>
-                    <p class="text-sm text-dimmed mb-4 leading-relaxed">This is a sample card with multiple content elements including headers, text, and actions.</p>
+                    <p class="text-sm text-muted-foreground mb-4 leading-relaxed">This is a sample card with multiple content elements including headers, text, and actions.</p>
                     <div class="flex gap-2">
                       <app-button label="Action 1" size="sm" />
                       <app-button label="Action 2" size="sm" variant="plain" />
@@ -128,13 +128,13 @@ interface CardProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
           <td class="p-3 text-foreground">{{ prop.type }}</td>
           <td class="p-3 text-foreground">{{ prop.default || '-' }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>
@@ -164,11 +164,11 @@ export class CardShowcaseComponent {
 </app-card>`;
 
   variantsCode = `<app-card>
-  <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Card Content</div>
+  <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Card Content</div>
 </app-card>
 
 <app-card padding="medium">
-  <div class="min-h-[60px] flex items-center justify-center text-dimmed text-sm">Padded Card</div>
+  <div class="min-h-[60px] flex items-center justify-center text-muted-foreground text-sm">Padded Card</div>
 </app-card>`;
 
   paddingCode = `<app-card padding="none">...</app-card>
@@ -178,7 +178,7 @@ export class CardShowcaseComponent {
 
   richCode = `<app-card>
   <h4 class="text-base font-semibold text-foreground mb-2">Card Title</h4>
-  <p class="text-sm text-dimmed mb-4 leading-relaxed">Card description here.</p>
+  <p class="text-sm text-muted-foreground mb-4 leading-relaxed">Card description here.</p>
   <div class="flex gap-2">
     <app-button label="Action 1" size="sm" />
     <app-button label="Action 2" size="sm" variant="plain" />

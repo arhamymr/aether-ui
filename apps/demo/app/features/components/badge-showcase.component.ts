@@ -23,7 +23,7 @@ interface BadgeProp {
     <section id="badge" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Badge</h2>
-        <p class="text-dimmed">Display status, counts, or labels with contextual styling</p>
+        <p class="text-muted-foreground">Display status, counts, or labels with contextual styling</p>
       </div>
 
       <app-card>
@@ -32,27 +32,27 @@ interface BadgeProp {
             <div class="grid grid-cols-[repeat(auto-fit,minmax(140px,1fr))] gap-4 p-6">
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="default">Default</app-badge>
-                <span class="text-xs text-dimmed">Default</span>
+                <span class="text-xs text-muted-foreground">Default</span>
               </div>
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="secondary">Secondary</app-badge>
-                <span class="text-xs text-dimmed">Secondary</span>
+                <span class="text-xs text-muted-foreground">Secondary</span>
               </div>
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="success">Success</app-badge>
-                <span class="text-xs text-dimmed">Success</span>
+                <span class="text-xs text-muted-foreground">Success</span>
               </div>
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="warning">Warning</app-badge>
-                <span class="text-xs text-dimmed">Warning</span>
+                <span class="text-xs text-muted-foreground">Warning</span>
               </div>
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="destructive">Destructive</app-badge>
-                <span class="text-xs text-dimmed">Destructive</span>
+                <span class="text-xs text-muted-foreground">Destructive</span>
               </div>
               <div class="flex flex-col items-center gap-2 p-3">
                 <app-badge variant="outline">Outline</app-badge>
-                <span class="text-xs text-dimmed">Outline</span>
+                <span class="text-xs text-muted-foreground">Outline</span>
               </div>
             </div>
           } @else {
@@ -139,13 +139,13 @@ interface BadgeProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
           <td class="p-3 text-foreground">{{ prop.type }}</td>
           <td class="p-3 text-foreground">{{ prop.default || '-' }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>

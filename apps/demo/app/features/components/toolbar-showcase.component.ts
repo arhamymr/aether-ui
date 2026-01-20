@@ -23,7 +23,7 @@ interface ToolbarProp {
     <section id="toolbar" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Toolbar</h2>
-        <p class="text-dimmed">A toolbar component for app headers</p>
+        <p class="text-muted-foreground">A toolbar component for app headers</p>
       </div>
 
       <app-card>
@@ -31,7 +31,7 @@ interface ToolbarProp {
           @if (basicTab() === 'preview') {
             <div class="p-6 space-y-6">
               <div>
-                <span class="text-xs text-dimmed font-medium mb-3 block">Default Toolbar</span>
+                <span class="text-xs text-muted-foreground font-medium mb-3 block">Default Toolbar</span>
                 <app-toolbar
                   [title]="'My Application'"
                   [hasMenu]="true"
@@ -45,7 +45,7 @@ interface ToolbarProp {
                 </app-toolbar>
               </div>
               <div>
-                <span class="text-xs text-dimmed font-medium mb-3 block">Dense Toolbar</span>
+                <span class="text-xs text-muted-foreground font-medium mb-3 block">Dense Toolbar</span>
                 <app-toolbar
                   [title]="'Settings'"
                   [dense]="true"
@@ -76,13 +76,13 @@ interface ToolbarProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
           <td class="p-3 text-foreground">{{ prop.type }}</td>
           <td class="p-3 text-foreground">{{ prop.default || '-' }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>

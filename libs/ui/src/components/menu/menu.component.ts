@@ -43,7 +43,7 @@ import { LucideAngularModule, ChevronDown, Menu, Search, Plus, Pencil, Trash2, S
               }
               <span>{{ item.label }}</span>
               @if (item.shortcut) {
-                <span class="ml-auto text-xs text-dimmed">{{ item.shortcut }}</span>
+                <span class="ml-auto text-xs text-muted-foreground">{{ item.shortcut }}</span>
               }
             </button>
           }

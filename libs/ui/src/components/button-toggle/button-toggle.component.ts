@@ -8,7 +8,7 @@ import { cn } from '../../lib/cn';
   imports: [CommonModule],
   template: `
     <div
-      class="inline-flex items-center p-1 rounded-lg bg-tertiary"
+      class="inline-flex items-center p-1 rounded-lg bg-muted"
       role="group"
       [attr.aria-label]="ariaLabel()">
       @for (option of options(); track option.value) {
@@ -19,7 +19,7 @@ import { cn } from '../../lib/cn';
                  disabled:opacity-50 disabled:cursor-not-allowed"
           [class.bg-card]="modelValue() === option.value"
           [class.text-foreground]="modelValue() === option.value"
-          [class.text-dimmed]="modelValue() !== option.value"
+          [class.text-muted-foreground]="modelValue() !== option.value"
           [disabled]="option.disabled"
           (click)="onSelect(option.value)">
           @if (option.icon) {

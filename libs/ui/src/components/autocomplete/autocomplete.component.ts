@@ -10,7 +10,7 @@ import { cn } from '../../lib/cn';
     <div class="relative">
       <div class="relative">
         @if (leadingIcon()) {
-          <i class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-sm text-dimmed">{{ leadingIcon() }}</i>
+          <i class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">{{ leadingIcon() }}</i>
         }
         <input
           type="text"
@@ -24,7 +24,7 @@ import { cn } from '../../lib/cn';
           [class.pl-10]="leadingIcon()"
           [disabled]="disabled()" />
         @if (loading()) {
-          <i class="material-icons absolute right-3 top-1/2 -translate-y-1/2 text-sm animate-spin text-dimmed">sync</i>
+          <i class="material-icons absolute right-3 top-1/2 -translate-y-1/2 text-sm animate-spin text-muted-foreground">sync</i>
         }
       </div>
       @if (isOpen() && filteredOptions.length > 0) {

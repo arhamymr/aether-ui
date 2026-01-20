@@ -23,7 +23,7 @@ interface AlertProp {
     <section id="alert" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Alert</h2>
-        <p class="text-dimmed">Displays a callout for user attention with multiple variants</p>
+        <p class="text-muted-foreground">Displays a callout for user attention with multiple variants</p>
       </div>
 
       <app-card>
@@ -31,7 +31,7 @@ interface AlertProp {
           @if (variantsTab() === 'preview') {
             <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 p-6">
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Default</span>
+                <span class="text-xs text-muted-foreground font-medium">Default</span>
                 <app-alert>
                   <app-alert-title>Alert Title</app-alert-title>
                   <app-alert-description>Alert description goes here.</app-alert-description>
@@ -41,7 +41,7 @@ interface AlertProp {
                 </app-alert>
               </div>
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Info</span>
+                <span class="text-xs text-muted-foreground font-medium">Info</span>
                 <app-alert variant="info">
                   <app-alert-title>Payment failed</app-alert-title>
                   <app-alert-description>Check your card details and try again.</app-alert-description>
@@ -51,7 +51,7 @@ interface AlertProp {
                 </app-alert>
               </div>
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Success</span>
+                <span class="text-xs text-muted-foreground font-medium">Success</span>
                 <app-alert variant="success">
                   <app-alert-title>Success</app-alert-title>
                   <app-alert-description>Your changes have been saved successfully.</app-alert-description>
@@ -61,7 +61,7 @@ interface AlertProp {
                 </app-alert>
               </div>
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Warning</span>
+                <span class="text-xs text-muted-foreground font-medium">Warning</span>
                 <app-alert variant="warning">
                   <app-alert-title>Warning</app-alert-title>
                   <app-alert-description>Some features may not work as expected.</app-alert-description>
@@ -71,7 +71,7 @@ interface AlertProp {
                 </app-alert>
               </div>
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Danger</span>
+                <span class="text-xs text-muted-foreground font-medium">Danger</span>
                 <app-alert variant="danger">
                   <app-alert-title>Error</app-alert-title>
                   <app-alert-description>Message deleted successfully. This action cannot be undone.</app-alert-description>
@@ -81,7 +81,7 @@ interface AlertProp {
                 </app-alert>
               </div>
               <div class="flex flex-col gap-2">
-                <span class="text-xs text-dimmed font-medium">Tertiary</span>
+                <span class="text-xs text-muted-foreground font-medium">Tertiary</span>
                 <app-alert variant="tertiary">
                   <app-alert-title>Note</app-alert-title>
                   <app-alert-description>Some useful information here.</app-alert-description>
@@ -115,7 +115,7 @@ interface AlertProp {
             @if (descriptionTab() === 'preview') {
               <div class="p-6">
                 <div class="flex flex-col gap-2">
-                  <span class="text-xs text-dimmed font-medium">With Description</span>
+                  <span class="text-xs text-muted-foreground font-medium">With Description</span>
                   <app-alert variant="info">
                     <app-alert-title>Payment failed</app-alert-title>
                     <app-alert-description>Check your card details and try again. Your payment could not be processed due to insufficient funds.</app-alert-description>
@@ -136,7 +136,7 @@ interface AlertProp {
             @if (actionTab() === 'preview') {
               <div class="p-6">
                 <div class="flex flex-col gap-2">
-                  <span class="text-xs text-dimmed font-medium">With Action</span>
+                  <span class="text-xs text-muted-foreground font-medium">With Action</span>
                   <app-alert variant="success">
                     <app-alert-title>Changes saved</app-alert-title>
                     <app-alert-description>Your profile has been updated successfully.</app-alert-description>
@@ -156,17 +156,17 @@ interface AlertProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Component</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Component</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.component }}</code></td>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
-          <td class="p-3 border-b border-border text-foreground text-dimmed">{{ prop.type }}</td>
-          <td class="p-3 border-b border-border text-foreground text-dimmed">{{ prop.default || '-' }}</td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.component }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 border-b border-border text-foreground text-muted-foreground">{{ prop.type }}</td>
+          <td class="p-3 border-b border-border text-foreground text-muted-foreground">{{ prop.default || '-' }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>
         </ng-template>
         <app-table [rows]="propsData()" [tableHeaderTemplate]="tableHeader" [tableCellTemplate]="tableCell" />

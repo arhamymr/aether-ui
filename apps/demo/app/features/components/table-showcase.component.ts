@@ -35,7 +35,7 @@ interface User {
     <section id="table" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Table</h2>
-        <p class="text-dimmed">Data table component with content projection for flexible layouts</p>
+        <p class="text-muted-foreground">Data table component with content projection for flexible layouts</p>
       </div>
 
       <app-card>
@@ -43,24 +43,24 @@ interface User {
           @if (basicTab() === 'preview') {
             <div class="p-6">
               <app-table [rows]="basicUsers()">
-                <th table-header-1 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Name</th>
-                <th table-header-2 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Email</th>
-                <th table-header-3 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Role</th>
+                <th table-header-1 class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Name</th>
+                <th table-header-2 class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Email</th>
+                <th table-header-3 class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Role</th>
 
                 @for (user of basicUsers(); track user.id) {
                   <ng-container table-cell-1>
                     <span class="px-4 py-4 whitespace-nowrap text-sm text-foreground block">{{ user.name }}</span>
                   </ng-container>
                   <ng-container table-cell-2>
-                    <span class="px-4 py-4 whitespace-nowrap text-sm text-dimmed block">{{ user.email }}</span>
+                    <span class="px-4 py-4 whitespace-nowrap text-sm text-muted-foreground block">{{ user.email }}</span>
                   </ng-container>
                   <ng-container table-cell-3>
-                    <span class="px-4 py-4 whitespace-nowrap text-sm text-dimmed block">
+                    <span class="px-4 py-4 whitespace-nowrap text-sm text-muted-foreground block">
                       <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium"
                         [class.bg-primary/10]="user.role === 'Admin'"
                         [class.text-primary]="user.role === 'Admin'"
-                        [class.bg-tertiary]="user.role === 'User'"
-                        [class.text-dimmed]="user.role === 'User'"
+                        [class.bg-muted]="user.role === 'User'"
+                        [class.text-muted-foreground]="user.role === 'User'"
                         [class.bg-accent/10]="user.role === 'Editor'"
                         [class.text-accent]="user.role === 'Editor'">
                         {{ user.role }}
@@ -94,9 +94,9 @@ interface User {
             @if (actionsTab() === 'preview') {
               <div class="p-6">
                 <app-table [rows]="usersWithActions()">
-                  <th table-header-1 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">User</th>
-                  <th table-header-2 class="px-4 py-3 text-left text-xs font-medium text-dimmed uppercase tracking-wider">Status</th>
-                  <th table-header-3 class="px-4 py-3 text-right text-xs font-medium text-dimmed uppercase tracking-wider">Actions</th>
+                  <th table-header-1 class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">User</th>
+                  <th table-header-2 class="px-4 py-3 text-left text-xs font-medium text-muted-foreground uppercase tracking-wider">Status</th>
+                  <th table-header-3 class="px-4 py-3 text-right text-xs font-medium text-muted-foreground uppercase tracking-wider">Actions</th>
 
                   @for (user of usersWithActions(); track user.id) {
                     <ng-container table-cell-1>
@@ -107,7 +107,7 @@ interface User {
                           </div>
                           <div class="ml-4">
                             <div class="text-sm font-medium text-foreground">{{ user.name }}</div>
-                            <div class="text-sm text-dimmed">{{ user.email }}</div>
+                            <div class="text-sm text-muted-foreground">{{ user.email }}</div>
                           </div>
                         </div>
                       </div>
@@ -119,8 +119,8 @@ interface User {
                           [class.text-success]="user.status === 'Active'"
                           [class.bg-warning/10]="user.status === 'Pending'"
                           [class.text-warning]="user.status === 'Pending'"
-                          [class.bg-danger/10]="user.status === 'Inactive'"
-                          [class.text-danger]="user.status === 'Inactive'">
+                          [class.bg-destructive/10]="user.status === 'Inactive'"
+                          [class.text-destructive]="user.status === 'Inactive'">
                           {{ user.status }}
                         </span>
                       </div>
@@ -146,13 +146,13 @@ interface User {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Content Projection Selectors</h3>
         <ng-template #selectorsHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Element</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Selector</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Element</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Selector</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #selectorsCell let-selector>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ selector.element }}</code></td>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ selector.selector }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ selector.element }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ selector.selector }}</code></td>
           <td class="p-3 text-foreground">{{ selector.description }}</td>
         </ng-template>
         <app-table [rows]="selectorData()" [tableHeaderTemplate]="selectorsHeader" [tableCellTemplate]="selectorsCell" />
@@ -161,12 +161,12 @@ interface User {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #propsHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #propsCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
           <td class="p-3 text-foreground">{{ prop.type }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>
         </ng-template>

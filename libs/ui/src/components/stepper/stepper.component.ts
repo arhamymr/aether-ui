@@ -13,26 +13,26 @@ import { cn } from '../../lib/cn';
       <div class="flex items-center justify-between mb-8">
         @for (step of steps(); track $index) {
           <div class="flex items-center">
-            <div class="flex flex-col items-center">
-              <div
-                class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium"
-                [class.bg-primary]="getCurrentStep() >= $index"
-                [class.bg-tertiary]="getCurrentStep() < $index"
-                [class.text-primary-foreground]="getCurrentStep() >= $index"
-                [class.text-dimmed]="getCurrentStep() < $index">
+              <div class="flex flex-col items-center">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium"
+                  [class.bg-primary]="getCurrentStep() >= $index"
+                  [class.bg-muted]="getCurrentStep() < $index"
+                  [class.text-primary-foreground]="getCurrentStep() >= $index"
+                  [class.text-muted-foreground]="getCurrentStep() < $index">
                 @if (getCurrentStep() > $index) {
                   <i class="material-icons text-sm">check</i>
                 } @else {
                   {{ $index + 1 }}
                 }
               </div>
-              <span class="text-xs mt-1 text-dimmed">{{ step }}</span>
+              <span class="text-xs mt-1 text-muted-foreground">{{ step }}</span>
             </div>
             @if ($index < steps().length - 1) {
               <div
                 class="w-12 h-0.5 mx-2"
                 [class.bg-primary]="getCurrentStep() > $index"
-                [class.bg-tertiary]="getCurrentStep() <= $index"></div>
+                [class.bg-muted]="getCurrentStep() <= $index"></div>
             }
           </div>
         }

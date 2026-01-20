@@ -32,7 +32,7 @@ interface DocSection {
                 class="w-full pl-9 pr-4 py-2 text-sm border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-150"
               />
               @if (searchQuery()) {
-                <button (click)="searchQuery.set('')" class="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-surface-variant rounded-full transition-colors">
+                <button (click)="searchQuery.set('')" class="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-muted rounded-full transition-colors">
                   <lucide-angular [img]="X" class="!text-[14px] !w-[14px] !h-[14px] text-[color:var(--foreground-variant,#999)]" />
                 </button>
               }

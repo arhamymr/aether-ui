@@ -23,7 +23,7 @@ interface InputProp {
     <section id="input" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Input</h2>
-        <p class="text-dimmed">Inputs allow users to enter text into a UI</p>
+        <p class="text-muted-foreground">Inputs allow users to enter text into a UI</p>
       </div>
 
       <app-card>
@@ -35,7 +35,7 @@ interface InputProp {
                   label="Username"
                   placeholder="Enter your username"
                   [(ngModel)]="inputValue" />
-                <p class="text-sm text-dimmed mt-2 font-mono">Value: {{ inputValue }}</p>
+                <p class="text-sm text-muted-foreground mt-2 font-mono">Value: {{ inputValue }}</p>
               </div>
             </div>
           } @else {
@@ -63,18 +63,18 @@ interface InputProp {
               <div class="p-6">
                 <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Default</span>
+                    <span class="text-xs text-muted-foreground font-medium">Default</span>
                     <app-input label="Default" placeholder="Placeholder" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">With Hint</span>
+                    <span class="text-xs text-muted-foreground font-medium">With Hint</span>
                     <app-input
                       label="Email"
                       placeholder="Enter email"
                       hint="We'll never share your email" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">With Error</span>
+                    <span class="text-xs text-muted-foreground font-medium">With Error</span>
                     <app-input
                       label="Password"
                       type="password"
@@ -83,7 +83,7 @@ interface InputProp {
                       [showPassword]="showPassword()" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Disabled</span>
+                    <span class="text-xs text-muted-foreground font-medium">Disabled</span>
                     <app-input
                       label="Disabled"
                       placeholder="Cannot edit"
@@ -106,15 +106,15 @@ interface InputProp {
               <div class="p-6">
                 <div class="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-6">
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Text</span>
+                    <span class="text-xs text-muted-foreground font-medium">Text</span>
                     <app-input type="text" label="Text" placeholder="Text input" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Email</span>
+                    <span class="text-xs text-muted-foreground font-medium">Email</span>
                     <app-input type="email" label="Email" placeholder="email@example.com" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Password</span>
+                    <span class="text-xs text-muted-foreground font-medium">Password</span>
                     <app-input
                       type="password"
                       label="Password"
@@ -123,7 +123,7 @@ interface InputProp {
                       (suffixClick)="togglePassword()" />
                   </div>
                   <div class="flex flex-col gap-2">
-                    <span class="text-xs text-dimmed font-medium">Number</span>
+                    <span class="text-xs text-muted-foreground font-medium">Number</span>
                     <app-input type="number" label="Quantity" placeholder="0" />
                   </div>
                 </div>
@@ -138,15 +138,15 @@ interface InputProp {
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Prop</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Type</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Default</th>
-          <th class="text-left p-3 bg-tertiary font-semibold text-dimmed text-xs uppercase tracking-wide">Description</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Default</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
         </ng-template>
         <ng-template #tableCell let-prop>
-          <td class="p-3 text-foreground"><code class="bg-tertiary px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
-          <td class="p-3 border-b border-border text-foreground text-dimmed">{{ prop.type }}</td>
-          <td class="p-3 border-b border-border text-foreground text-dimmed">{{ prop.default || '-' }}</td>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 border-b border-border text-foreground text-muted-foreground">{{ prop.type }}</td>
+          <td class="p-3 border-b border-border text-foreground text-muted-foreground">{{ prop.default || '-' }}</td>
           <td class="p-3 text-foreground">{{ prop.description }}</td>
         </ng-template>
         <app-table [rows]="propsData()" [tableHeaderTemplate]="tableHeader" [tableCellTemplate]="tableCell" />

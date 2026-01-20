@@ -10,7 +10,7 @@ import { CardComponent, ButtonComponent } from '@apsara/ui';
     <app-card class="flex-1 flex flex-col h-full">
       <div class="mb-6">
         <h3 class="text-lg font-semibold text-foreground mb-1.5">Button Variants</h3>
-        <p class="text-sm text-dimmed">Multiple variants, sizes, and states</p>
+        <p class="text-sm text-muted-foreground">Multiple variants, sizes, and states</p>
       </div>
       <div class="flex-1 flex flex-col gap-5">
         <div class="flex flex-wrap gap-2">

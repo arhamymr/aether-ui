@@ -11,27 +11,27 @@ import { LucideAngularModule, Search } from 'lucide-angular';
     <app-card class="flex-1 flex flex-col h-full">
       <div class="mb-6">
         <h3 class="text-lg font-semibold text-foreground mb-1.5">Input Group</h3>
-        <p class="text-sm text-dimmed">Input fields with prefix and suffix addons</p>
+        <p class="text-sm text-muted-foreground">Input fields with prefix and suffix addons</p>
       </div>
         <div class="flex-1 flex flex-col gap-4">
           <div class="flex items-center border border-border rounded-md bg-input overflow-hidden">
-            <span class="flex items-center justify-center px-3 text-sm text-dimmed bg-secondary h-[38px] border-r border-border">
+            <span class="flex items-center justify-center px-3 text-sm text-muted-foreground bg-secondary h-[38px] border-r border-border">
               <lucide-angular [img]="Search" [size]="16" />
             </span>
             <app-input placeholder="Search..." />
           </div>
           <div class="flex items-center border border-border rounded-md bg-input overflow-hidden">
             <app-input placeholder="Username" />
-            <span class="flex items-center justify-center px-3 text-sm text-dimmed bg-secondary h-[38px] border-l border-border">
+            <span class="flex items-center justify-center px-3 text-sm text-muted-foreground bg-secondary h-[38px] border-l border-border">
               @gmail.com
             </span>
           </div>
           <div class="flex items-center border border-border rounded-md bg-input overflow-hidden">
-            <span class="flex items-center justify-center px-3 text-sm text-dimmed bg-secondary h-[38px] border-r border-border">
+            <span class="flex items-center justify-center px-3 text-sm text-muted-foreground bg-secondary h-[38px] border-r border-border">
               $
             </span>
             <app-input type="number" placeholder="0.00" />
-            <span class="flex items-center justify-center px-3 text-sm text-dimmed bg-secondary h-[38px] border-l border-border">
+            <span class="flex items-center justify-center px-3 text-sm text-muted-foreground bg-secondary h-[38px] border-l border-border">
               .00
             </span>
           </div>

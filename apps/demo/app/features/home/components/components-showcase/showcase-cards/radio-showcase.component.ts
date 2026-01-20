@@ -10,7 +10,7 @@ import { CardComponent, RadioComponent } from '@apsara/ui';
     <app-card class="flex-1 flex flex-col h-full">
       <div class="mb-6">
         <h3 class="text-lg font-semibold text-foreground mb-1.5">Radio Group</h3>
-        <p class="text-sm text-dimmed">Radio button groups for single selection</p>
+        <p class="text-sm text-muted-foreground">Radio button groups for single selection</p>
       </div>
       <div class="flex-1 flex flex-col gap-4">
         <app-radio 

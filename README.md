@@ -117,7 +117,7 @@ Usage: npx aether-ui add button card input
 ## Project Structure
 
 ```
-apsara-angular-devkit/
+Aether-ui/
 ├── apps/
 │   ├── boilerplate/                      # Project templates
 │   │   └── minimal/
@@ -271,7 +271,7 @@ const program = new Command();
 
 program
   .name('aether-ui')
-  .description('shadcn-style UI component installer for Angular')
+  .description('UI component installer for Angular')
   .version('1.0.0');
 
 program.addCommand(initCommand().name('init'));

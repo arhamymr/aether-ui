@@ -19,7 +19,7 @@ WORKDIR /app
 
 COPY --from=builder /app/dist/apps/demo/browser /app
 
-RUN  pnpm install http-server
+RUN npm install -g http-server
 
 EXPOSE 4200
 

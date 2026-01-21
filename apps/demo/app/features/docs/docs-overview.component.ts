@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LucideAngularModule, Rocket, Palette, Terminal, Book, ExternalLink, ArrowRight } from 'lucide-angular';
+import { LucideAngularModule, Rocket, Palette, Terminal, Book, ExternalLink, ArrowRight, Menu } from 'lucide-angular';
 import { CardComponent } from '@apsara/ui';
 
 interface DocSection {
@@ -17,7 +17,7 @@ interface DocSection {
   template: `
     <div class="min-h-screen bg-background text-foreground">
       <app-card padding="large" align="center" class="w-full mx-auto px-6 mb-16">
-        <h1 class="text-[2.5rem] font-medium mb-4 text-foreground">Documentation</h1>
+        <h1 class="text-[2.5rem] mb-4 text-foreground">Documentation</h1>
         <p class="text-[1.125rem] text-muted-foreground max-w-[600px] mx-auto leading-relaxed">
           Everything you need to know to get started and make the most of Apsara Angular DevKit
         </p>
@@ -53,12 +53,14 @@ export class DocsOverviewComponent {
   Book = Book;
   ExternalLink = ExternalLink;
   ArrowRight = ArrowRight;
+  Menu = Menu;
   sections: DocSection[] = [
     { id: 'getting-started', title: 'Getting Started', icon: 'rocket', description: 'Installation and quick setup guide' },
     { id: 'theming', title: 'Theming', icon: 'palette', description: 'Customize colors and appearance' },
     { id: 'cli', title: 'CLI Commands', icon: 'terminal', description: 'Available commands and usage' },
     { id: 'guides', title: 'Guides', icon: 'book', description: 'Step-by-step tutorials' },
-    { id: 'resources', title: 'Resources', icon: 'externalLink', description: 'Links and learning materials' }
+    { id: 'resources', title: 'Resources', icon: 'externalLink', description: 'Links and learning materials' },
+    { id: 'icons', title: 'Icons', icon: 'menu', description: 'Icon library and usage guide' }
   ];
 
   getIcon(name: string) {
@@ -68,6 +70,7 @@ export class DocsOverviewComponent {
       'terminal': Terminal,
       'book': Book,
       'externalLink': ExternalLink,
+      'menu': Menu,
     };
     return iconMap[name] || Rocket;
   }

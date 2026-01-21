@@ -9,16 +9,17 @@ import { LucideAngularModule, Sun, Moon } from 'lucide-angular';
   selector: 'app-navbar',
   imports: [RouterLink, RouterLinkActive, NgOptimizedImage, ButtonComponent, LucideAngularModule],
   template: `
-    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background px-6">
-      <div class="max-w-[1400px] mx-auto flex items-center justify-between h-16">
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background">
+      <div class="max-w-[1400px] mx-auto flex items-center justify-between h-16 px-6">
         <div class="flex items-center gap-3">
           <a routerLink="/" class="flex items-center">
-<img
+            <img
               [ngSrc]="themeService.theme() === 'dark' ? 'https://assets.apsaradigital.com/aether-logo-white.png' : 'https://assets.apsaradigital.com/aether-logo.png'"
               width="140"
               height="32"
               alt="Aether Logo"
-              class="h-5.5 w-auto">
+              class="h-5.5 w-auto"
+            />
           </a>
           <span class="bg-[oklch(0.55_0.2_250/0.1)] text-primary text-[11px] font-semibold px-2 py-1 rounded-sm">
             v0 (alpha)

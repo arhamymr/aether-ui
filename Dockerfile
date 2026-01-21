@@ -10,14 +10,17 @@ RUN pnpm install --frozen-lockfile
 
 COPY . .
 
-RUN npx ng build demo --configuration=production
+RUN pnpm exec ng build demo --configuration=production
 
-# Stage 2: Production - Serve with Express
+# Stage 2: Production - Serve static files with http-server
 FROM node:20-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app/dist/apps/demo/browser /app/browser
-COPY --from=builder /app/apps/demo/server.ts /app/server.ts
+COPY --from=builder /app/dist/apps/demo/browser /app
 
-CMD ["node", "server.ts"]
+RUN  pnpm install http-server
+
+EXPOSE 4200
+
+CMD ["http-server", "/app", "-p", "4200", "-c-1"]

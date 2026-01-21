@@ -28,7 +28,7 @@ interface ComponentCategory {
         </p>
       </app-card>
 
-      <main class="max-w-[1400px] mx-auto">
+      <main class="max-w-[1400px] mx-auto px-6">
         @for (category of categories; track category.name) {
           <section class="mb-14">
             <h2 class="text-[1.25rem] font-medium text-foreground mb-6 pb-3 border-b border-border">

@@ -23,7 +23,7 @@ interface DocSection {
         </p>
       </app-card>
 
-      <main class="max-w-[1400px] mx-auto">
+      <main class="max-w-[1400px] mx-auto px-6">
         <section class="mb-14">
           <div class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-4">
             @for (section of sections; track section.id) {

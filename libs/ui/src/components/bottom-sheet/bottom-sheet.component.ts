@@ -71,7 +71,7 @@ import { cn } from '../../lib/cn';
         <div
           [class.sheet-enter]="!isClosing()"
           [class.sheet-exit]="isClosing()"
-          class="relative w-full max-w-md max-h-[90vh] bg-background rounded-t-2xl shadow-xl"
+          class="relative w-full h-[100vh] bg-background shadow-xl"
           (animationend)="onAnimationEnd()">
           @if (hasHandle()) {
             <div class="flex justify-center pt-3 pb-1">
@@ -83,7 +83,7 @@ import { cn } from '../../lib/cn';
               <h3 class="font-semibold text-foreground">{{ title() }}</h3>
             </div>
           }
-          <div class="px-4 py-4 overflow-y-auto max-h-[60vh]">
+          <div class="px-4 py-4 overflow-y-auto h-[calc(100vh-8rem)]">
             <ng-content />
           </div>
         </div>

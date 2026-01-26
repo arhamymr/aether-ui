@@ -2,7 +2,7 @@ import { Component, signal, computed, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LucideAngularModule, ArrowLeft, Search, X, SearchX, AlertTriangle, Zap, FileText, Heading, Square, CheckSquare, Radio, ToggleLeft, TextSelect, List, Calendar, Clock, Tag, Menu, PanelLeft, AppWindow, ChevronRight, ChevronDown, GitBranch, Smile, Loader, RotateCw, ArrowUpDown, Minus, Grid, Info, Bell, ArrowDownToLine, Box } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
-import { BottomSheetComponent } from '@apsara/ui';
+import { BottomSheetComponent, InputComponent } from '@apsara/ui';
 
 interface ComponentItem {
   id: string;
@@ -102,16 +102,14 @@ interface ComponentCategory {
         
         <div class="px-6 mb-6">
           <div class="relative">
-            <lucide-angular [img]="Search" class="!text-[18px] !w-[18px] !h-[18px] absolute left-3 top-1/2 -translate-y-1/2 text-[color:var(--foreground-variant,#999)]"></lucide-angular>
-            <input 
-              type="text" 
+            <app-input
               [ngModel]="searchQuery()"
-              (ngModelChange)="searchQuery.set($event)" 
+              (ngModelChange)="searchQuery.set($event)"
               placeholder="Search components..."
-              class="w-full pl-9 pr-4 py-2 text-sm border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-150"
+              [prefixIcon]="Search"
             />
             @if (searchQuery()) {
-              <button (click)="searchQuery.set('')" class="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-muted rounded-full transition-colors">
+              <button (click)="searchQuery.set('')" class="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 hover:bg-muted rounded-full transition-colors z-10">
                 <lucide-angular [img]="X" class="!text-[14px] !w-[14px] !h-[14px] text-[color:var(--foreground-variant,#999)]"></lucide-angular>
               </button>
             }

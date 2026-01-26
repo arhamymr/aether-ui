@@ -1,5 +1,5 @@
-import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, signal, inject } from '@angular/core';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Plus, ArrowRight, Download, LoaderCircle } from 'lucide-angular';
@@ -230,4 +230,8 @@ export class ButtonShowcaseComponent {
     { name: 'class', type: 'string', description: 'Custom CSS classes to apply' },
     { name: 'clicked', type: 'EventEmitter<Event>', description: 'Emitted on button click' }
   ];
+
+  scrollTo(id: string) {
+    this.viewportScroller.scrollToAnchor(id);
+  }
 }

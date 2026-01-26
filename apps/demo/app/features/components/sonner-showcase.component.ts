@@ -8,10 +8,6 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
   standalone: true,
   imports: [CommonModule, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, CodeSnippetComponent],
   template: `
-    <app-alert variant="warning" class="mb-6">
-      <app-alert-title>AI Generated Content</app-alert-title>
-      <app-alert-description>This component code may have been AI generated. Please review and verify before using in production.</app-alert-description>
-    </app-alert>
     <section id="sonner" class="mb-16 scroll-m-20">
       <div class="mb-6">
         <h2 class="text-2xl font-semibold text-foreground mb-2">Sonner</h2>
@@ -47,6 +43,20 @@ import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-
       <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Usage</h3>
         <app-code-snippet [code]="usageCode" language="typescript" />
+      </div>
+      <div class="mt-8">
+        <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
+        <ng-template #tableHeader>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Type</th>
+          <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Description</th>
+        </ng-template>
+        <ng-template #tableCell let-prop>
+          <td class="p-3 text-foreground"><code class="bg-muted px-1.5 py-0.5 rounded text-xs">{{ prop.name }}</code></td>
+          <td class="p-3 text-foreground">{{ prop.type }}</td>
+          <td class="p-3 text-foreground">{{ prop.description }}</td>
+        </ng-template>
+        <app-table [rows]="propsData" [tableHeaderTemplate]="tableHeader" [tableCellTemplate]="tableCell" />
       </div>
     </section>
   `
@@ -100,6 +110,18 @@ toast.promise(promise, {
   error: 'Error',
 });
 `;
+
+  propsData = [
+    { name: 'position', type: "'top-left' | 'top-center' | 'top-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'", description: 'Position of the toasts' },
+    { name: 'expand', type: 'boolean', description: 'Whether to expand the toast stack' },
+    { name: 'richColors', type: 'boolean', description: 'Whether to use rich colors for success/error/warning types' },
+    { name: 'closeButton', type: 'boolean', description: 'Whether to show a close button' },
+    { name: 'theme', type: "'light' | 'dark' | 'system'", description: 'Theme of the toasts' },
+    { name: 'offset', type: 'string | number', description: 'Offset from the edge' },
+    { name: 'dir', type: "'ltr' | 'rtl' | 'auto'", description: 'Directionality of the toasts' },
+    { name: 'visibleToasts', type: 'number', description: 'Number of visible toasts' },
+    { name: 'duration', type: 'number', description: 'Duration in milliseconds' }
+  ];
 
   showToast(type: string): void {
     switch (type) {

@@ -98,6 +98,10 @@ export class InputComponent implements ControlValueAccessor {
 
   protected showPassword = false;
 
+  isString(value: any): boolean {
+    return typeof value === 'string';
+  }
+}
   readonly fileChange = output<File[]>();
 
   private onChange: (value: string) => void = () => {};

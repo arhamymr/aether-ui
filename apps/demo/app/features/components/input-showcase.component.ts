@@ -362,7 +362,7 @@ interface InputProp {
                   type="search"
                   placeholder="Search..."
                   orientation="inline"
-                  prefixIcon="🔍" />
+                  [prefixIcon]="Search" />
               </div>
             } @else {
               <app-code-snippet [code]="inlineLayoutCode" language="html" />
@@ -532,6 +532,7 @@ interface InputProp {
   `
 })
 export class InputShowcaseComponent {
+  Search = Search;
   previewCodeOptions = [
     { value: 'preview', label: 'Preview' },
     { value: 'code', label: 'Code' }

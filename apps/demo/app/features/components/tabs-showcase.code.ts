@@ -1,5 +1,5 @@
 export const tabsShowcaseCode = {
-  importCode: `import { TabsComponent } from '@apsara/ui/tabs';`,
+  importCode: `import { TabsComponent } from '@aether/ui/tabs';`,
 
   usageCode: `<app-tabs
   [options]="[

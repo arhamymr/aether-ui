@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, RadioComponent } from '@apsara/ui';
+import { CardComponent, RadioComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-radio-showcase',

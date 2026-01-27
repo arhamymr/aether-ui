@@ -1,5 +1,5 @@
 export const tableShowcaseCode = {
-  importCode: `import { TableComponent } from '@apsara/ui/table';`,
+  importCode: `import { TableComponent } from '@aether/ui/table';`,
 
   usageCode: `<app-table [rows]="users()">
   <th table-header-1 class="px-4 py-3 text-left text-xs font-medium uppercase">Name</th>

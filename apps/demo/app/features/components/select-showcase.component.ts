@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SelectComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { SelectComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { LucideAngularModule, ArrowDown, ArrowUp, Minus, Globe, Search, User, Shield, Eye } from 'lucide-angular';
@@ -215,9 +215,9 @@ export class SelectShowcaseComponent {
     { value: 'viewer', label: 'Viewer' }
   ];
 
-  installCode = `npm install @apsara/ui/select`;
+  installCode = `npm install @aether/ui/select`;
 
-  importCode = `import { SelectComponent } from '@apsara/ui/select';`;
+  importCode = `import { SelectComponent } from '@aether/ui/select';`;
 
   usageCode = `<app-select
   [options]="countryOptions"

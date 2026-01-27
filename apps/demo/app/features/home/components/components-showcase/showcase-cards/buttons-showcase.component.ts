@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent } from '@apsara/ui';
+import { CardComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-buttons-showcase',

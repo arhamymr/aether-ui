@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent, InputComponent } from '@apsara/ui';
+import { DialogComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent, InputComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface DialogProp {
@@ -119,9 +119,9 @@ export class DialogShowcaseComponent {
   });
   lastAction = signal<string>('');
 
-  installCode = `npm install @apsara/ui/dialog`;
+  installCode = `npm install @aether/ui/dialog`;
 
-  importCode = `import { DialogComponent } from '@apsara/ui/dialog';`;
+  importCode = `import { DialogComponent } from '@aether/ui/dialog';`;
 
   usageCode = `<app-dialog
   [isOpen]="isOpen"

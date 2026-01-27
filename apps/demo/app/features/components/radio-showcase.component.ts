@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RadioComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { RadioComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule, ReactiveFormsModule, FormControl } from '@angular/forms';
 
@@ -167,9 +167,9 @@ export class RadioShowcaseComponent {
     { value: 'enterprise', label: 'Enterprise Plan ($50/mo)' }
   ];
 
-  installCode = `npm install @apsara/ui/radio`;
+  installCode = `npm install @aether/ui/radio`;
 
-  importCode = `import { RadioComponent } from '@apsara/ui/radio';`;
+  importCode = `import { RadioComponent } from '@aether/ui/radio';`;
 
   usageCode = `<app-radio
   [name]="'gender'"

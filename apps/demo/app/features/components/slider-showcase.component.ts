@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SliderComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { SliderComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Volume2 } from 'lucide-angular';
 
@@ -140,9 +140,9 @@ export class SliderShowcaseComponent {
   volume = signal(75);
   price = signal(500);
 
-  installCode = `npm install @apsara/ui/slider`;
+  installCode = `npm install @aether/ui/slider`;
 
-  importCode = `import { SliderComponent } from '@apsara/ui/slider';`;
+  importCode = `import { SliderComponent } from '@aether/ui/slider';`;
 
   usageCode = `<app-slider
   [min]="0"

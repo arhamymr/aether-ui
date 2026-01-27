@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TooltipComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { TooltipComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Plus, Trash2, Settings } from 'lucide-angular';
 
@@ -125,9 +125,9 @@ export class TooltipShowcaseComponent {
   Trash2 = Trash2;
   Settings = Settings;
 
-  installCode = `npm install @apsara/ui/tooltip`;
+  installCode = `npm install @aether/ui/tooltip`;
 
-  importCode = `import { TooltipComponent } from '@apsara/ui/tooltip';`;
+  importCode = `import { TooltipComponent } from '@aether/ui/tooltip';`;
 
   usageCode = `<app-tooltip content="Tooltip text" placement="top">
   <app-button label="Hover me" />

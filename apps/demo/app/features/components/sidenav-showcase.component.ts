@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SidenavComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { SidenavComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, LayoutDashboard, Users, Settings } from 'lucide-angular';
 
@@ -108,9 +108,9 @@ export class SidenavShowcaseComponent {
   Settings = Settings;
   isOpen = signal(false);
 
-  installCode = `npm install @apsara/ui/sidenav`;
+  installCode = `npm install @aether/ui/sidenav`;
 
-  importCode = `import { SidenavComponent } from '@apsara/ui/sidenav';`;
+  importCode = `import { SidenavComponent } from '@aether/ui/sidenav';`;
 
   usageCode = `<app-sidenav
   [isOpen]="isOpen()"

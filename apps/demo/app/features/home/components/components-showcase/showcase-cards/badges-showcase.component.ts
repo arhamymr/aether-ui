@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, BadgeComponent } from '@apsara/ui';
+import { CardComponent, BadgeComponent } from '@aether/ui';
 import { LucideAngularModule, RefreshCw, Download, Clock } from 'lucide-angular';
 
 @Component({

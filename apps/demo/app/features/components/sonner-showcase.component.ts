@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, CardComponent, TabsComponent, TableComponent, toast } from '@apsara/ui';
+import { ButtonComponent, CardComponent, TabsComponent, TableComponent, toast } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 @Component({
@@ -72,7 +72,7 @@ export class SonnerShowcaseComponent {
   installCode = `npm install ngx-sonner`;
 
   usageCode = `import { Component } from '@angular/core';
-import { toast } from 'ngx-sonner'; // or from @apsara/ui
+import { toast } from 'ngx-sonner'; // or from @aether/ui
 
 @Component({...})
 export class MyComponent {

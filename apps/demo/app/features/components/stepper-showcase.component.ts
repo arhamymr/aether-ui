@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepperComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { StepperComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface StepperProp {
@@ -81,9 +81,9 @@ export class StepperShowcaseComponent {
   basicTab = signal<string>('preview');
   currentStep = signal(0);
 
-  installCode = `npm install @apsara/ui/stepper`;
+  installCode = `npm install @aether/ui/stepper`;
 
-  importCode = `import { StepperComponent } from '@apsara/ui/stepper';`;
+  importCode = `import { StepperComponent } from '@aether/ui/stepper';`;
 
   usageCode = `<app-stepper
   [steps]="['Account', 'Profile', 'Review']"

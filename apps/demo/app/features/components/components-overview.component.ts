@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { LucideAngularModule, AlertTriangle, Zap, FileText, Heading, Square, CheckSquare, Radio, ToggleLeft, TextCursorInput, List, Search, Calendar, Clock, ChevronDown, Menu, ArrowRight, Grid, Tag, RefreshCw, Minus, Maximize2, Info, Bell, ArrowDown, Palette, Terminal, Book, ExternalLink, PanelLeft, AppWindow, ChevronRight, GitBranch, Smile, Loader, RotateCw, ArrowUpDown, ArrowDownToLine, Box } from 'lucide-angular';
-import { CardComponent } from '@apsara/ui';
+import { CardComponent } from '@aether/ui';
 
 interface ComponentItem {
   id: string;

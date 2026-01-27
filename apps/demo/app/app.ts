@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent, FooterComponent } from './shared/components';
-import { SonnerComponent } from '@apsara/ui';
+import { SonnerComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-root',

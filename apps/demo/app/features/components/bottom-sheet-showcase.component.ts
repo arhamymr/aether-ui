@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BottomSheetComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { BottomSheetComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Mail, MessageSquare, Link } from 'lucide-angular';
 
@@ -117,9 +117,9 @@ export class BottomSheetShowcaseComponent {
   shareTab = signal<string>('preview');
   isOpen = signal(false);
 
-  installCode = `npm install @apsara/ui/bottom-sheet`;
+  installCode = `npm install @aether/ui/bottom-sheet`;
 
-  importCode = `import { BottomSheetComponent } from '@apsara/ui/bottom-sheet';`;
+  importCode = `import { BottomSheetComponent } from '@aether/ui/bottom-sheet';`;
 
   usageCode = `<app-bottom-sheet
   [isOpen]="isOpen"

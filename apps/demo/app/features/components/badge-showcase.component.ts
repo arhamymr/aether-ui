@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BadgeComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { BadgeComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { LucideAngularModule, Mail, Bell, ShoppingCart } from 'lucide-angular';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
@@ -169,9 +169,9 @@ export class BadgeShowcaseComponent {
   iconsTab = signal<string>('preview');
   notificationTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/badge`;
+  installCode = `npm install @aether/ui/badge`;
 
-  importCode = `import { BadgeComponent } from '@apsara/ui/badge';`;
+  importCode = `import { BadgeComponent } from '@aether/ui/badge';`;
 
   usageCode = `<app-badge variant="default">Default</app-badge>
 <app-badge variant="secondary">Secondary</app-badge>

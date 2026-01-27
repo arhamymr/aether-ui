@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, InputComponent } from '@apsara/ui';
+import { CardComponent, InputComponent } from '@aether/ui';
 import { LucideAngularModule, Search } from 'lucide-angular';
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProgressComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ProgressComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface ProgressProp {
@@ -127,9 +127,9 @@ export class ProgressBarShowcaseComponent {
 
   progressValue = signal(60);
 
-  installCode = `npm install @apsara/ui/progress-bar`;
+  installCode = `npm install @aether/ui/progress-bar`;
 
-  importCode = `import { ProgressComponent } from '@apsara/ui/progress-bar';`;
+  importCode = `import { ProgressComponent } from '@aether/ui/progress-bar';`;
 
   usageCode = `<app-progress
   [value]="progressValue"

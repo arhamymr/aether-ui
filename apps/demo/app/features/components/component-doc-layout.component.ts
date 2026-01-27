@@ -2,7 +2,7 @@ import { Component, signal, computed, HostListener } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { LucideAngularModule, ArrowLeft, Search, X, SearchX, AlertTriangle, Zap, FileText, Heading, Square, CheckSquare, Radio, ToggleLeft, TextSelect, List, Calendar, Clock, Tag, Menu, PanelLeft, AppWindow, ChevronRight, ChevronDown, GitBranch, Smile, Loader, RotateCw, ArrowUpDown, Minus, Grid, Info, Bell, ArrowDownToLine, Box } from 'lucide-angular';
 import { FormsModule } from '@angular/forms';
-import { BottomSheetComponent, InputComponent } from '@apsara/ui';
+import { BottomSheetComponent, InputComponent } from '@aether/ui';
 
 interface ComponentItem {
   id: string;

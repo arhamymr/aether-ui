@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ButtonComponent } from '@apsara/ui';
+import { ButtonComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-not-found',

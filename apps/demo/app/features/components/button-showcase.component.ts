@@ -1,6 +1,6 @@
 import { Component, signal, inject } from '@angular/core';
 import { CommonModule, ViewportScroller } from '@angular/common';
-import { ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Plus, ArrowRight, Download, LoaderCircle } from 'lucide-angular';
 
@@ -176,9 +176,9 @@ export class ButtonShowcaseComponent {
   iconsTab = signal<string>('preview');
   customClassTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/button`;
+  installCode = `npm install @aether/ui/button`;
 
-  importCode = `import { ButtonComponent } from '@apsara/ui/button';`;
+  importCode = `import { ButtonComponent } from '@aether/ui/button';`;
 
   usageCode = `<app-button variant="default" (clicked)="onClick($event)">
   Click me

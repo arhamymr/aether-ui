@@ -2,7 +2,7 @@ import { Component, signal, inject, HostListener } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../../core/services';
-import { ButtonComponent, BottomSheetComponent } from '@apsara/ui';
+import { ButtonComponent, BottomSheetComponent } from '@aether/ui';
 import { LucideAngularModule, Sun, Moon, Menu, X } from 'lucide-angular';
 
 @Component({

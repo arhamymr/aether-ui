@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TimepickerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { TimepickerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule } from '@angular/forms';
 
@@ -83,9 +83,9 @@ export class TimepickerShowcaseComponent {
   basicTab = signal<string>('preview');
   selectedTime = signal<string>('12:00');
 
-  installCode = `npm install @apsara/ui/timepicker`;
+  installCode = `npm install @aether/ui/timepicker`;
 
-  importCode = `import { TimepickerComponent } from '@apsara/ui/timepicker';`;
+  importCode = `import { TimepickerComponent } from '@aether/ui/timepicker';`;
 
   usageCode = `<app-timepicker
   [(ngModel)]="selectedTime"

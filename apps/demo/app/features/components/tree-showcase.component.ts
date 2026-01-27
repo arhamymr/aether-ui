@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TreeComponent, TreeNode, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { TreeComponent, TreeNode, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface TreeProp {
@@ -97,9 +97,9 @@ export class TreeShowcaseComponent {
   ]);
   selectedNode = signal<string>('');
 
-  installCode = `npm install @apsara/ui/tree`;
+  installCode = `npm install @aether/ui/tree`;
 
-  importCode = `import { TreeComponent, TreeNode } from '@apsara/ui/tree';`;
+  importCode = `import { TreeComponent, TreeNode } from '@aether/ui/tree';`;
 
   usageCode = `<app-tree
   [nodes]="treeNodes"

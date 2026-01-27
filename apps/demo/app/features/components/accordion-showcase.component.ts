@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AccordionComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { AccordionComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface AccordionProp {
@@ -105,9 +105,9 @@ export class AccordionShowcaseComponent {
     'advanced': () => false
   });
 
-  installCode = `npm install @apsara/ui/accordion`;
+  installCode = `npm install @aether/ui/accordion`;
 
-  importCode = `import { AccordionComponent } from '@apsara/ui/accordion';`;
+  importCode = `import { AccordionComponent } from '@aether/ui/accordion';`;
 
   usageCode = `<app-accordion
   title="Panel Title"

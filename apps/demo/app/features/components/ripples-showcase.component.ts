@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RippleComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { RippleComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface RippleProp {
@@ -133,9 +133,9 @@ export class RipplesShowcaseComponent {
   customTab = signal<string>('preview');
   disabledTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/ripple`;
+  installCode = `npm install @aether/ui/ripple`;
 
-  importCode = `import { RippleComponent } from '@apsara/ui/ripple';`;
+  importCode = `import { RippleComponent } from '@aether/ui/ripple';`;
 
   usageCode = `<app-ripple>
   <app-button>Click me</app-button>

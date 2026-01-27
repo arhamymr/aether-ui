@@ -1,6 +1,6 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InputComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { InputComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule, FormGroup, FormControl, Validators, ValidationErrors, ValidatorFn, AbstractControl, AsyncValidatorFn } from '@angular/forms';
@@ -596,9 +596,9 @@ export class InputShowcaseComponent {
     password: new FormControl('', [Validators.required])
   });
 
-  installCode = `npm install @apsara/ui/input`;
+  installCode = `npm install @aether/ui/input`;
 
-  importCode = `import { InputComponent } from '@apsara/ui/input';`;
+  importCode = `import { InputComponent } from '@aether/ui/input';`;
 
   usageCode = `<app-input
   label="Email"

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, SliderComponent } from '@apsara/ui';
+import { CardComponent, SliderComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-slider-showcase',

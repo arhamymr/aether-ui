@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AlertComponent, AlertTitleComponent, AlertDescriptionComponent, AlertActionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { AlertComponent, AlertTitleComponent, AlertDescriptionComponent, AlertActionComponent, ButtonComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface AlertProp {
@@ -184,14 +184,14 @@ export class AlertShowcaseComponent {
   descriptionTab = signal<string>('preview');
   actionTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/alert`;
+  installCode = `npm install @aether/ui/alert`;
 
   importCode = `import { 
   AlertComponent, 
   AlertTitleComponent, 
   AlertDescriptionComponent, 
   AlertActionComponent 
-} from '@apsara/ui/alert';`;
+} from '@aether/ui/alert';`;
 
   usageCode = `<app-alert variant="info">
   <app-alert-title>Alert Title</app-alert-title>

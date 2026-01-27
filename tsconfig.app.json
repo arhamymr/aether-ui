@@ -9,9 +9,9 @@
     "paths": {
       "@app/*": ["src/app/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@apsara/ui/button": ["packages/ui/src/components/button/index.ts"],
-      "@apsara/ui/card": ["packages/ui/src/components/card/index.ts"],
-      "@apsara/ui/input": ["packages/ui/src/components/input/index.ts"]
+      "@aether/ui/button": ["libs/ui/src/components/button/index.ts"],
+      "@aether/ui/card": ["libs/ui/src/components/card/index.ts"],
+      "@aether/ui/input": ["libs/ui/src/components/input/index.ts"]
     }
   },
   "include": [

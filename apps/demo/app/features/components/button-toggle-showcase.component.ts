@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonToggleComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ButtonToggleComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Grid, List, AlignJustify, Calendar, Hash, DollarSign } from 'lucide-angular';
 
@@ -129,9 +129,9 @@ export class ButtonToggleShowcaseComponent {
     { value: 'price', label: 'Price', icon: DollarSign }
   ];
 
-  installCode = `npm install @apsara/ui/button-toggle`;
+  installCode = `npm install @aether/ui/button-toggle`;
 
-  importCode = `import { ButtonToggleComponent } from '@apsara/ui/button-toggle';`;
+  importCode = `import { ButtonToggleComponent } from '@aether/ui/button-toggle';`;
 
   usageCode = `<app-button-toggle
   [options]="viewOptions"

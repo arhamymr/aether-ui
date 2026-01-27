@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, SlideToggleComponent } from '@apsara/ui';
+import { CardComponent, SlideToggleComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-switches-showcase',

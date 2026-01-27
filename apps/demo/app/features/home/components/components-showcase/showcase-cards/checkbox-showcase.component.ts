@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, CheckboxComponent } from '@apsara/ui';
+import { CardComponent, CheckboxComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-checkbox-showcase',

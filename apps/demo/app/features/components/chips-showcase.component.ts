@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChipsComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ChipsComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface ChipProp {
@@ -137,9 +137,9 @@ export class ChipsShowcaseComponent {
     { value: '2', label: 'Another Disabled', disabled: true }
   ]);
 
-  installCode = `npm install @apsara/ui/chips`;
+  installCode = `npm install @aether/ui/chips`;
 
-  importCode = `import { ChipsComponent } from '@apsara/ui/chips';`;
+  importCode = `import { ChipsComponent } from '@aether/ui/chips';`;
 
   usageCode = `<app-chips
   [modelValue]="tags"

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TableComponent, ButtonComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent } from '@apsara/ui';
+import { TableComponent, ButtonComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { tableShowcaseCode } from './table-showcase.code';
 
@@ -174,7 +174,7 @@ export class TableShowcaseComponent {
     { id: 3, name: 'Emily Davis', email: 'emily@example.com', role: 'User', status: 'Active', lastLogin: '2024-01-14' }
   ]);
 
-  installCode = `npm install @apsara/ui/table`;
+  installCode = `npm install @aether/ui/table`;
 
   propsData = signal([
     { name: 'rows', type: 'any[]', description: 'Array of data to display' },

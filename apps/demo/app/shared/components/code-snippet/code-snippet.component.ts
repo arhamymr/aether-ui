@@ -1,6 +1,6 @@
 import { Component, input, signal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, CardComponent } from '@apsara/ui';
+import { ButtonComponent, CardComponent } from '@aether/ui';
 import { LucideAngularModule, Check, Copy } from 'lucide-angular';
 import { HighlightService } from '../../services/highlight.service';
 

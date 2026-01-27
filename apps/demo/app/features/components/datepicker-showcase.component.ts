@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DatepickerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { DatepickerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule } from '@angular/forms';
 
@@ -121,9 +121,9 @@ export class DatepickerShowcaseComponent {
   minDate = new Date();
   maxDate = new Date(new Date().setMonth(new Date().getMonth() + 3));
 
-  installCode = `npm install @apsara/ui/datepicker`;
+  installCode = `npm install @aether/ui/datepicker`;
 
-  importCode = `import { DatepickerComponent } from '@apsara/ui/datepicker';`;
+  importCode = `import { DatepickerComponent } from '@aether/ui/datepicker';`;
 
   usageCode = `<app-datepicker
   [placeholder]="'Select a date'"

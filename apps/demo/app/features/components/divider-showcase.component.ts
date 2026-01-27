@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DividerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { DividerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface DividerProp {
@@ -121,9 +121,9 @@ export class DividerShowcaseComponent {
   textTab = signal<string>('preview');
   verticalTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/divider`;
+  installCode = `npm install @aether/ui/divider`;
 
-  importCode = `import { DividerComponent } from '@apsara/ui/divider';`;
+  importCode = `import { DividerComponent } from '@aether/ui/divider';`;
 
   usageCode = `<app-divider />`;
 

@@ -1,7 +1,7 @@
 import { Component, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ButtonComponent } from '@apsara/ui';
+import { ButtonComponent } from '@aether/ui';
 import {
   FormShowcaseComponent,
   BadgesShowcaseComponent,

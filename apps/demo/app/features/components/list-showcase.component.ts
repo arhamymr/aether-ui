@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ListComponent, ListItemComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ListComponent, ListItemComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Inbox, Send, File } from 'lucide-angular';
 
@@ -93,9 +93,9 @@ export class ListShowcaseComponent {
   File = File;
   lastClicked = signal<string>('');
 
-  installCode = `npm install @apsara/ui/list`;
+  installCode = `npm install @aether/ui/list`;
 
-  importCode = `import { ListComponent, ListItemComponent } from '@apsara/ui/list';`;
+  importCode = `import { ListComponent, ListItemComponent } from '@aether/ui/list';`;
 
   usageCode = `<app-list>
   <app-list-item

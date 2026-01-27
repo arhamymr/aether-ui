@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GridListComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { GridListComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface GridListProp {
@@ -130,9 +130,9 @@ export class GridListShowcaseComponent {
 
   items = signal([1, 2, 3, 4, 5, 6]);
 
-  installCode = `npm install @apsara/ui/grid-list`;
+  installCode = `npm install @aether/ui/grid-list`;
 
-  importCode = `import { GridListComponent } from '@apsara/ui/grid-list';`;
+  importCode = `import { GridListComponent } from '@aether/ui/grid-list';`;
 
   usageCode = `<app-grid-list [cols]="2" [gap]="'1rem'">
   @for (item of items; track $index) {

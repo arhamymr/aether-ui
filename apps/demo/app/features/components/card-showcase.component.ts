@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ButtonComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface CardProp {
@@ -154,9 +154,9 @@ export class CardShowcaseComponent {
   paddingTab = signal<string>('preview');
   richTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/card`;
+  installCode = `npm install @aether/ui/card`;
 
-  importCode = `import { CardComponent } from '@apsara/ui/card';`;
+  importCode = `import { CardComponent } from '@aether/ui/card';`;
 
   usageCode = `<app-card padding="medium">
   <h3>Card Title</h3>

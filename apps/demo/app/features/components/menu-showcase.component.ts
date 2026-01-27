@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { MenuComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface MenuProp {
@@ -118,9 +118,9 @@ export class MenuShowcaseComponent {
     { label: 'About', icon: 'info' }
   ];
 
-  installCode = `npm install @apsara/ui/menu`;
+  installCode = `npm install @aether/ui/menu`;
 
-  importCode = `import { MenuComponent } from '@apsara/ui/menu';`;
+  importCode = `import { MenuComponent } from '@aether/ui/menu';`;
 
   usageCode = `<app-menu
   [label]="'File'"

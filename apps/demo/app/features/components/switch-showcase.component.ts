@@ -1,8 +1,8 @@
 import { Component, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
-import { SlideToggleComponent } from '@apsara/ui';
+import { SlideToggleComponent } from '@aether/ui';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
 interface SwitchProp {
@@ -300,9 +300,9 @@ export class SwitchShowcaseComponent {
     }, null, 2);
   });
 
-  installCode = `npm install @apsara/ui/switch`;
+  installCode = `npm install @aether/ui/switch`;
 
-  importCode = `import { SwitchComponent } from '@apsara/ui/switch';`;
+  importCode = `import { SwitchComponent } from '@aether/ui/switch';`;
 
   usageCode = `<app-slide-toggle
   label="Enable notifications"

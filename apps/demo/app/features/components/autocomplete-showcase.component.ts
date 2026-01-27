@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AutocompleteComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { AutocompleteComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface AutocompleteProp {
@@ -130,9 +130,9 @@ export class AutocompleteShowcaseComponent {
 
   selectedLanguage = signal<string>('');
 
-  installCode = `npm install @apsara/ui/autocomplete`;
+  installCode = `npm install @aether/ui/autocomplete`;
 
-  importCode = `import { AutocompleteComponent } from '@apsara/ui/autocomplete';`;
+  importCode = `import { AutocompleteComponent } from '@aether/ui/autocomplete';`;
 
   usageCode = `<app-autocomplete
   [options]="options"

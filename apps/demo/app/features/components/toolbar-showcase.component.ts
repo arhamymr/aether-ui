@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { ToolbarComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { LucideAngularModule, Search, Bell, MoreVertical } from 'lucide-angular';
 
@@ -104,9 +104,9 @@ export class ToolbarShowcaseComponent {
   Bell = Bell;
   MoreVertical = MoreVertical;
 
-  installCode = `npm install @apsara/ui/toolbar`;
+  installCode = `npm install @aether/ui/toolbar`;
 
-  importCode = `import { ToolbarComponent } from '@apsara/ui/toolbar';`;
+  importCode = `import { ToolbarComponent } from '@aether/ui/toolbar';`;
 
   usageCode = `<app-toolbar
   [title]="'My Application'"

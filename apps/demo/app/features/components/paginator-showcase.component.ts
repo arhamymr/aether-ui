@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PaginatorComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { PaginatorComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface PaginatorProp {
@@ -87,9 +87,9 @@ export class PaginatorShowcaseComponent {
   pageIndex = signal(0);
   pageSize = signal(10);
 
-  installCode = `npm install @apsara/ui/paginator`;
+  installCode = `npm install @aether/ui/paginator`;
 
-  importCode = `import { PaginatorComponent } from '@apsara/ui/paginator';`;
+  importCode = `import { PaginatorComponent } from '@aether/ui/paginator';`;
 
   usageCode = `<app-paginator
   [length]="100"

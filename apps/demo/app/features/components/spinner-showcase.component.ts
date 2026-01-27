@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SpinnerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { SpinnerComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface SpinnerProp {
@@ -106,9 +106,9 @@ export class SpinnerShowcaseComponent {
 
   sizesTab = signal<string>('preview');
 
-  installCode = `npm install @apsara/ui/spinner`;
+  installCode = `npm install @aether/ui/spinner`;
 
-  importCode = `import { SpinnerComponent } from '@apsara/ui/spinner';`;
+  importCode = `import { SpinnerComponent } from '@aether/ui/spinner';`;
 
   usageCode = `<app-spinner size="md" />`;
 

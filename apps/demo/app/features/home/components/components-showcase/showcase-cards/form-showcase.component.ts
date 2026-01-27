@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, CardComponent, InputComponent, CheckboxComponent, SelectComponent } from '@apsara/ui';
+import { ButtonComponent, CardComponent, InputComponent, CheckboxComponent, SelectComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-form-showcase',

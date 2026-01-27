@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LucideAngularModule, House, Pencil, Trash2, Plus, Search, Settings, ChevronLeft, ChevronRight, ChevronDown, Menu } from 'lucide-angular';
-import { CardComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { CardComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 
 interface IconProp {

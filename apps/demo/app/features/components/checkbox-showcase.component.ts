@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CheckboxComponent, CardComponent, TabsComponent, TableComponent } from '@apsara/ui';
+import { CheckboxComponent, CardComponent, TabsComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 
@@ -350,9 +350,9 @@ export class CheckboxShowcaseComponent {
     analytics: new FormControl(false)
   });
 
-  installCode = `npm install @apsara/ui/checkbox`;
+  installCode = `npm install @aether/ui/checkbox`;
 
-  importCode = `import { CheckboxComponent } from '@apsara/ui/checkbox';`;
+  importCode = `import { CheckboxComponent } from '@aether/ui/checkbox';`;
 
   usageCode = `<app-checkbox
   label="Accept terms"

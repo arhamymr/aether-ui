@@ -14,9 +14,9 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "paths": {
-      "@apsara/ui": ["libs/ui/src/index.ts"],
-      "@apsara/cli": ["libs/cli/src/index.ts"],
-      "@apsara/tools": ["libs/tools/src/index.ts"]
+      "@aether/ui": ["libs/ui/src/index.ts"],
+      "@aether/cli": ["libs/cli/src/index.ts"],
+      "@aether/tools": ["libs/tools/src/index.ts"]
     },
     "baseUrl": "."
   },

@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TabsComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TableComponent } from '@apsara/ui';
+import { TabsComponent, AlertComponent, AlertTitleComponent, AlertDescriptionComponent, CardComponent, TableComponent } from '@aether/ui';
 import { CodeSnippetComponent } from '../../shared/components/code-snippet/code-snippet.component';
 import { tabsShowcaseCode } from './tabs-showcase.code';
 
@@ -188,7 +188,7 @@ export class TabsShowcaseComponent {
     confirmPassword: ''
   };
 
-  installCode = `npm install @apsara/ui/tabs`;
+  installCode = `npm install @aether/ui/tabs`;
 
   onAccountTabChange(value: string) {
     this.accountActiveTab.set(value);

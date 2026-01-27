@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CardComponent, TabsComponent, BadgeComponent } from '@apsara/ui';
+import { CardComponent, TabsComponent, BadgeComponent } from '@aether/ui';
 
 @Component({
   selector: 'app-tabs-showcase',

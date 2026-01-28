@@ -88,6 +88,34 @@ interface BottomSheetProp {
       </app-bottom-sheet>
 
       <div class="mt-8">
+        <h3 class="text-lg font-semibold text-foreground mb-4">Half Height Bottom Sheet</h3>
+        <app-card>
+          <app-tabs [options]="previewCodeOptions" [modelValue]="halfTab()" (changed)="halfTab.set($event)">
+            @if (halfTab() === 'preview') {
+              <div class="p-6">
+                <app-button label="Open Half Height Sheet" (clicked)="openHalfSheet()" />
+              </div>
+            } @else {
+              <app-code-snippet [code]="halfCode" language="html" />
+            }
+          </app-tabs>
+        </app-card>
+      </div>
+
+      <app-bottom-sheet
+        [isOpen]="isHalfSheetOpen()"
+        title="Half Height"
+        [hasHandle]="true"
+        height="half"
+        (closed)="onHalfSheetClose()">
+        <div class="space-y-4">
+          <p class="text-sm text-gray-600">This is a half-height bottom sheet that takes up 50% of the viewport.</p>
+          <p class="text-sm text-gray-600">Perfect for displaying shorter content or options without taking up the entire screen.</p>
+          <button class="w-full py-2 px-4 bg-primary text-primary-foreground rounded hover:opacity-90">Action Button</button>
+        </div>
+      </app-bottom-sheet>
+
+      <div class="mt-8">
         <h3 class="text-lg font-semibold text-foreground mb-4">Props</h3>
         <ng-template #tableHeader>
           <th class="text-left p-3 bg-muted font-semibold text-muted-foreground text-xs uppercase tracking-wide">Prop</th>
@@ -115,7 +143,9 @@ export class BottomSheetShowcaseComponent {
 
   basicTab = signal<string>('preview');
   shareTab = signal<string>('preview');
+  halfTab = signal<string>('preview');
   isOpen = signal(false);
+  isHalfSheetOpen = signal(false);
 
   installCode = `npm install @aether/ui/bottom-sheet`;
 
@@ -140,22 +170,33 @@ export class BottomSheetShowcaseComponent {
 </app-bottom-sheet>`;
 
   shareCode = `<app-bottom-sheet
-  [isOpen]="isOpen()"
-  title="Share"
-  [hasHandle]="true"
-  (closed)="onClose()">
-  <p class="text-sm text-gray-600">Choose how you want to share:</p>
-  <div class="grid grid-cols-3 gap-4">
-    <button>Email</button>
-    <button>Message</button>
-    <button>Copy Link</button>
-  </div>
-</app-bottom-sheet>`;
+   [isOpen]="isOpen()"
+   title="Share"
+   [hasHandle]="true"
+   (closed)="onClose()">
+   <p class="text-sm text-gray-600">Choose how you want to share:</p>
+   <div class="grid grid-cols-3 gap-4">
+     <button>Email</button>
+     <button>Message</button>
+     <button>Copy Link</button>
+   </div>
+ </app-bottom-sheet>`;
+
+  halfCode = `<app-bottom-sheet
+   [isOpen]="isOpen()"
+   title="Half Height"
+   [hasHandle]="true"
+   height="half"
+   (closed)="onClose()">
+   <p class="text-sm text-gray-600">This is a half-height bottom sheet</p>
+   <button>Action Button</button>
+ </app-bottom-sheet>`;
 
   propsData = (): BottomSheetProp[] => [
     { name: 'isOpen', type: 'boolean', description: 'Controls whether the bottom sheet is visible' },
     { name: 'title', type: 'string', description: 'Title displayed in the header' },
     { name: 'hasHandle', type: 'boolean', description: 'Shows a drag handle at the top' },
+    { name: 'height', type: "'full' | 'half'", description: 'Height of the bottom sheet (default: full)' },
     { name: 'closed', type: 'EventEmitter<void>', description: 'Emitted when the sheet is closed' }
   ];
 
@@ -167,7 +208,15 @@ export class BottomSheetShowcaseComponent {
     this.isOpen.set(true);
   }
 
+  openHalfSheet(): void {
+    this.isHalfSheetOpen.set(true);
+  }
+
   onClose(): void {
     this.isOpen.set(false);
+  }
+
+  onHalfSheetClose(): void {
+    this.isHalfSheetOpen.set(false);
   }
 }

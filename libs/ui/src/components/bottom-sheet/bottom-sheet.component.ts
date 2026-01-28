@@ -1,4 +1,4 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, input, output, signal, computed } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { cn } from '../../lib/cn';
 
@@ -71,7 +71,8 @@ import { cn } from '../../lib/cn';
         <div
           [class.sheet-enter]="!isClosing()"
           [class.sheet-exit]="isClosing()"
-          class="relative w-full h-[100vh] bg-background shadow-xl"
+          class="relative w-full bg-background shadow-xl"
+          [class]="heightClass()"
           (animationend)="onAnimationEnd()">
           @if (hasHandle()) {
             <div class="flex justify-center pt-3 pb-1">
@@ -83,7 +84,7 @@ import { cn } from '../../lib/cn';
               <h3 class="font-semibold text-foreground">{{ title() }}</h3>
             </div>
           }
-          <div class="px-4 py-4 overflow-y-auto h-[calc(100vh-8rem)]">
+          <div class="px-4 py-4 overflow-y-auto" [class]="contentHeightClass()">
             <ng-content />
           </div>
         </div>
@@ -96,9 +97,17 @@ export class BottomSheetComponent {
   title = input<string>('');
   hasHandle = input<boolean>(true);
   closeOnBackdropClick = input<boolean>(true);
+  height = input<'full' | 'half'>('full');
   closed = output<void>();
 
   protected isClosing = signal(false);
+  protected heightClass = computed(() => 
+    this.height() === 'full' ? 'h-[100vh]' : 'h-[50vh]'
+  );
+
+  protected contentHeightClass = computed(() => 
+    this.height() === 'full' ? 'h-[calc(100vh-8rem)]' : 'h-[calc(50vh-8rem)]'
+  );
 
   onBackdropClick(): void {
     if (this.closeOnBackdropClick()) {

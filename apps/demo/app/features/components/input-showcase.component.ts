@@ -532,7 +532,7 @@ interface InputProp {
   `
 })
 export class InputShowcaseComponent {
-  Search = Search;
+  readonly Search = Search;
   previewCodeOptions = [
     { value: 'preview', label: 'Preview' },
     { value: 'code', label: 'Code' }
@@ -789,7 +789,7 @@ get zodEmailError(): string | null {
   type="search"
   placeholder="Search..."
   orientation="inline"
-  classes="w-64" />`;
+  [prefixIcon]="Search" />`;
 
   requiredFieldsCode = `<app-input
   label="Email"
@@ -828,7 +828,7 @@ get zodEmailError(): string | null {
     { name: 'error', type: 'string', default: "''", description: 'Error message text' },
     { name: 'hint', type: 'string', default: "''", description: 'Hint text below input' },
     { name: 'required', type: 'boolean', default: 'false', description: 'Shows required indicator' },
-    { name: 'prefixIcon', type: 'string', default: "''", description: 'Icon to display before input' },
+    { name: 'prefixIcon', type: 'string | Icon', default: "''", description: 'Icon to display before input (emoji string or lucide icon)' },
     { name: 'accept', type: 'string', default: "''", description: 'Accepted file types (for file inputs)' },
     { name: 'multiple', type: 'boolean', default: 'false', description: 'Allow multiple file selection' },
     { name: 'orientation', type: "'vertical' | 'inline'", default: "'vertical'", description: 'Layout orientation' },

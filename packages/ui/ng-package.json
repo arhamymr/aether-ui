@@ -1,0 +1,16 @@
+{
+  "$schema": "ng-packagr/ng-package.schema.json",
+  "lib": {
+    "entryFile": "src/index.ts"
+  },
+  "allowedNonPeerDependencies": [
+    "@angular/animations",
+    "@angular/cdk",
+    "class-variance-authority",
+    "clsx",
+    "lucide-angular",
+    "ngx-sonner",
+    "tailwind-merge",
+    "tslib"
+  ]
+}

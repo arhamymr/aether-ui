@@ -1,69 +1,21 @@
 {
   "name": "aether-ui",
-  "version": "1.0.0",
-  "description": "shadcn-style UI component library and CLI for Angular",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "libs/*",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "nx run-many --target=build --all",
-    "build:ui": "nx build ui",
-    "build:cli": "nx build cli",
-    "dev": "nx serve demo",
-    "test": "nx run-many --target=test --all",
-    "lint": "nx run-many --target=lint --all"
-  },
-  "keywords": [
-    "angular",
-    "ui",
-    "components",
-    "tailwind",
-    "cli"
-  ],
-  "license": "MIT",
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^21.0.5",
-    "@angular/build": "^21.0.5",
-    "@angular/compiler-cli": "^21.1.0",
-    "@angular/material": "21.1.0",
-    "@nx/angular": "^22.3.3",
-    "@nx/eslint": "^22.3.3",
-    "@nx/js": "^22.3.3",
-    "@nx/vitest": "^22.3.3",
-    "@tailwindcss/postcss": "^4.1.18",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.10.0",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "nx": "^22.3.3",
-    "postcss": "^8.5.6",
-    "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.18",
-    "zone.js": "^0.16.0"
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "watch": "turbo run watch",
+    "start": "turbo run start"
   },
   "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
+    "node": ">=18"
   },
   "packageManager": "pnpm@10.28.0",
-  "dependencies": {
-    "@angular/cdk": "21.1.0",
-    "@angular/cli": "^21.0.0",
-    "@angular/common": "^21.1.0",
-    "@angular/compiler": "^21.1.0",
-    "@angular/core": "^21.1.0",
-    "@angular/forms": "^21.1.0",
-    "@angular/material": "~21.1.0",
-    "@angular/platform-browser": "^21.1.0",
-    "@angular/platform-browser-dynamic": "^21.1.0",
-    "@angular/router": "^21.1.0",
-    "express": "^4.18.2",
-    "lucide-angular": "^0.562.0",
-    "ngx-sonner": "^3.1.0",
-    "rxjs": "^7.8.2",
-    "tslib": "^2.8.1"
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "eslint": "^8.57.0",
+    "prettier": "^2.8.8",
+    "turbo": "^2.9.3"
   }
 }

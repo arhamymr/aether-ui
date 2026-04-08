@@ -1,4 +1,4 @@
-import { Injectable, signal, effect, Inject, PLATFORM_ID } from '@angular/core';
+import { Injectable, signal, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 /**
@@ -25,7 +25,7 @@ export type Theme = 'light' | 'dark';
 
 export class ThemeService {
   /** LocalStorage key used to persist the user's theme preference */
-  private readonly STORAGE_KEY = 'apsara-theme';
+  private readonly STORAGE_KEY = 'aether-ui-theme';
   
   /** CSS media query string for detecting system-level dark mode preference */
   private readonly SYSTEM_PREFERS_DARK = '(prefers-color-scheme: dark)';

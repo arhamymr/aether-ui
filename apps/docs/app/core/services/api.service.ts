@@ -6,6 +6,7 @@ import { ApiResponse, PaginatedResponse, PaginationParams } from '../models';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ApiService {
   private readonly http = inject(HttpClient);
   private readonly baseUrl = '/api';
